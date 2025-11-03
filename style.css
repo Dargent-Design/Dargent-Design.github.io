@@ -1,27 +1,88 @@
-body{
-    background-color: slategrey;
-}
 
-h1{
-    display: block;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
-p{
-    margin: 1;
-}
-
-.grid{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 22px;
-}
-
-.annee{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-style: italic;
-    color: azure;
-}
-
-.activite{
+body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4d3e3;
+    color: #f4d3e3;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
 }
+
+
+.entete {
+    display: flex;
+    align-items: center;
+    gap: px; 
+    margin-bottom: 40px;
+}
+
+
+.photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+ border: 3px solid crimson;
+}
+
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: crimson;
+    font-size: 48px;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: crimson;
+    border-bottom: 2px solid crimson;
+    padding-bottom: 6px;
+    margin-top: 24px;
+}
+
+
+.cv-section {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 150px 1fr; 
+    align-items: center; 
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+
+.annee {
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: crimson;
+}
+
+.activite {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     margin: 0;
+}
+
+.sous-titre {
+    font-family: 'Bebas Neue', sans-serif;
+    color: crimson;
+    font-size: 20px;
+    margin: 4px 0 0 0;
+}
+
+
+.cv-section .grid p {
+    display: block;
+    grid-column: 1 / -1; 
+    margin-bottom: 10px; 
+}
+
