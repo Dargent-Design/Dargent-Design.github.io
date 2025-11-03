@@ -1,0 +1,27 @@
+body{
+    background-color: slategrey;
+}
+
+h1{
+    display: block;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+p{
+    margin: 1;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 22px;
+}
+
+.annee{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: azure;
+}
+
+.activite{
+    font-family: Arial, Helvetica, sans-serif;
+}
