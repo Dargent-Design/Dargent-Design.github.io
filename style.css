@@ -1,3 +1,7 @@
+/* ---------------------- */
+/* RESET DE BASE          */
+/* ---------------------- */
+
 *,
 *::before,
 *::after {
@@ -13,8 +17,8 @@ body {
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #ffffff;   
-    color: #000344;          
+    background: #ffffff;
+    color: #000344;
 }
 
 a {
@@ -22,11 +26,14 @@ a {
     text-decoration: none;
 }
 
+/* ---------------------- */
+/* SECTION ACCUEIL        */
+/* ---------------------- */
 
 .accueil {
     min-height: 100vh;
-    background: #000344;     
-    color: #f5efe4;           
+    background: #000344;
+    color: #f5efe4;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,7 +55,7 @@ a {
     font-weight: 700;
     white-space: nowrap;
 
-    opacity: 0;                         
+    opacity: 0;
     animation: nomIntro 1.2s ease-out forwards;
 }
 
@@ -72,17 +79,17 @@ a {
     }
 }
 
-
+/* ---------------------- */
+/* TOPBAR                 */
+/* ---------------------- */
 
 .topbar {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 10px 18px;
     background: #000344;
     color: #ffffff;
@@ -102,12 +109,18 @@ a {
     font-size: 0.75rem;
 }
 
-
+/* ---------------------- */
+/* CONTENU GLOBAL         */
+/* ---------------------- */
 
 .contenu {
     padding: 40px 16px 60px;
     background: #ffffff;
 }
+
+/* ---------------------- */
+/* SECTION PROJETS        */
+/* ---------------------- */
 
 .section-projets {
     max-width: 1100px;
@@ -120,15 +133,13 @@ a {
     font-size: 1.8rem;
 }
 
-
+/* Grille de projets */
 
 .projets-grille {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;  
+    gap: 8px;
 }
-
-
 
 .carte-projet {
     border-radius: 0;
@@ -136,8 +147,6 @@ a {
     background: transparent;
     color: #0a044e;
 }
-
-
 
 .projet-cadre {
     background: transparent;
@@ -147,19 +156,26 @@ a {
 }
 
 .meta-projet {
-    font-size: 0.75rem;      
-    font-weight: 300;        
-    letter-spacing: 0.08em;  
-    opacity: 0.7;           
-    margin: 2px 0;          
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+    margin: 2px 0;
 }
 
+/* Lien sur toute la carte */
+
+.projet-lien {
+    display: block;
+}
+
+/* Image de projet */
 
 .projet-image {
     position: relative;
     width: 100%;
-    height: 260px;      
-    border-radius: 0;   
+    height: 260px;
+    border-radius: 0;
     overflow: hidden;
 }
 
@@ -181,6 +197,8 @@ a {
     opacity: 0;
 }
 
+/* Effet hover sur desktop */
+
 .carte-projet:hover .projet-img-default {
     opacity: 0;
 }
@@ -189,38 +207,46 @@ a {
     opacity: 1;
 }
 
+/* CTA "voir le projet" – caché par défaut (desktop) */
 
+.projet-cta {
+    display: none;
+    margin: 0;
+}
+
+/* ---------------------- */
+/* SECTION À PROPOS       */
+/* ---------------------- */
 
 .section-apropos {
     max-width: 700px;
     margin: 0 auto;
 }
 
-.projet-lien {
-    display: block;
-}
-
+/* ---------------------- */
+/* PAGES DÉTAIL PROJET    */
+/* ---------------------- */
 
 .section-projet-detail {
     max-width: 1350px;
     margin: 40px auto 60px;
 }
 
+/* Galeries d’images */
 
 .galerie-3 {
     display: grid;
-    grid-template-columns: 2fr 1fr;  
-    grid-auto-rows: 200px;          
-    gap: 3px;                       
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: 200px;
+    gap: 3px;
 }
-
 
 .galerie-bas {
     display: grid;
-    grid-template-columns: 1fr 1fr;   
-    grid-auto-rows: 450px;           
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 450px;
     gap: 3px;
-    margin-top: 3px;                 
+    margin-top: 3px;
 }
 
 .galerie-3 figure,
@@ -250,6 +276,8 @@ a {
     grid-row: span 2;
 }
 
+/* Texte projet */
+
 .projet-soustitre {
     margin-top: 32px;
     margin-bottom: 16px;
@@ -260,92 +288,28 @@ a {
     max-width: 700px;
 }
 
+/* Note d’intention */
+
 .note-intention {
-    max-width: 650px;      /* plus étroit => texte plus “groupé” */
-    margin-left: 0;        /* collé à gauche de la section */
-    margin-right: auto;    /* pas centré */
-    text-align: left;      /* au cas où */
+    max-width: 650px;
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
 }
 
-
-
-@media (max-width: 768px) {
-    .galerie-3,
-    .galerie-bas {
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto;
-    }
-
-    .galerie-grand,
-    .galerie-petit-haut,
-    .galerie-petit-bas {
-        grid-row: auto;
-    }
-}
+/* ---------------------- */
+/* IMAGES GLOBALES        */
+/* ---------------------- */
 
 img {
-  width: 100%;     
-  height: auto;    
-  display: block;  
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-
-
-
-
-@media (max-width: 768px) {
-
-    
-    .galerie-3,
-    .galerie-bas {
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto;
-    }
-
-    .galerie-grand,
-    .galerie-petit-haut,
-    .galerie-petit-bas {
-        grid-row: auto;
-    }
-
-    
-    .projets-grille {
-        grid-template-columns: 1fr;   
-        gap: 8px;
-        max-width: 360px;            
-        margin: 0 auto;               
-    }
-
-    .carte-projet {
-        padding: 0;
-    }
-
-    .projet-image {
-        height: 180px;                
-        border-radius: 0;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .projet-image img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    
-    .projet-img-hover {
-        display: none;
-    }
-
-    .carte-projet:hover .projet-img-default {
-        opacity: 1;
-    }
-}
-
+/* ---------------------- */
+/* CV / À PROPOS          */
+/* ---------------------- */
 
 .cv-apercu {
     margin-top: 24px;
@@ -362,19 +326,19 @@ img {
 }
 
 .cv-liste {
-    list-style: none;        
+    list-style: none;
     padding-left: 0;
     margin: 0 0 12px;
 }
 
 .cv-liste li {
     position: relative;
-    padding-left: 14px;      
+    padding-left: 14px;
     margin-bottom: 2px;
 }
 
 .cv-liste li::before {
-    content: "•";           
+    content: "•";
     position: absolute;
     left: 0;
     top: 0;
@@ -392,4 +356,131 @@ img {
 
 .cv-lien:hover {
     opacity: 0.7;
+}
+
+/* ---------------------- */
+/* RESPONSIVE MOBILE      */
+/* ---------------------- */
+
+
+/* ---------------------- */
+/* RESPONSIVE MOBILE      */
+/* ---------------------- */
+
+@media (max-width: 768px) {
+
+    /* Galeries en une colonne */
+
+    .galerie-3,
+    .galerie-bas {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .galerie-grand,
+    .galerie-petit-haut,
+    .galerie-petit-bas {
+        grid-row: auto;
+    }
+
+    /* Grille des projets en une colonne */
+
+    .projets-grille {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    /* Cartes : effet léger + mise en avant au clic */
+
+    .carte-projet {
+        padding: 0;
+        transform: scale(0.97);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .carte-projet:active,
+    .carte-projet:focus-within {
+        transform: scale(1.01);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    /* Image plus basse sur mobile */
+
+    .projet-image {
+        height: 180px;
+        border-radius: 0;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .projet-image img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Pas de hover swap sur mobile */
+
+    .projet-img-hover {
+        display: none;
+    }
+
+    .carte-projet:hover .projet-img-default {
+        opacity: 1;
+    }
+
+    /* CTA "voir le projet" visible sous les titres, avec couleurs différentes */
+
+    .projet-cta {
+        display: block;
+        margin-top: 6px;
+        text-align: left;
+        font-size: 0.60rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+    }
+
+    /* Couleurs différentes pour chaque projet (ordre des <article>) */
+
+    .carte-projet:nth-child(1) .projet-cta {
+        color: #27937e;  /* corail */
+    }
+
+    .carte-projet:nth-child(2) .projet-cta {
+        color: #FFB347;  /* orange doux */
+    }
+
+    .carte-projet:nth-child(3) .projet-cta {
+        color: #fa3e96;  /* rose pâle */
+    }
+
+    .carte-projet:nth-child(4) .projet-cta {
+        color: #c20303;  /* vert doux */
+    }
+
+    .carte-projet:nth-child(5) .projet-cta {
+        color: #4D96FF;  /* bleu vif */
+    }
+
+    .carte-projet:nth-child(6) .projet-cta {
+        color: #f9afdf;  /* violet */
+    }
+
+    .carte-projet:nth-child(7) .projet-cta {
+        color: #FF8FA3;  /* rose soutenu */
+    }
+
+    .carte-projet:nth-child(8) .projet-cta {
+        color: #ffe75f;  /* jaune-orangé */
+    }
+
+    .carte-projet:nth-child(9) .projet-cta {
+        color: #ff1c1c;  /* turquoise */
+    }
 }
