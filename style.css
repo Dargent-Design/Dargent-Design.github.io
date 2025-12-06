@@ -362,12 +362,27 @@ img {
 /* RESPONSIVE MOBILE      */
 /* ---------------------- */
 
-
-/* ---------------------- */
-/* RESPONSIVE MOBILE      */
-/* ---------------------- */
-
 @media (max-width: 768px) {
+
+    /* Accueil : adapter le nom */
+
+    .accueil {
+        padding: 0 16px;
+    }
+
+    .accueil-ligne {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .accueil-nom {
+        font-size: 2.1rem;      /* plus petit sur mobile */
+        letter-spacing: 0.08em; /* moins espacé */
+        white-space: normal;    /* permet le retour à la ligne */
+        line-height: 1.2;
+    }
 
     /* Galeries en une colonne */
 
@@ -434,7 +449,7 @@ img {
         opacity: 1;
     }
 
-    /* CTA "voir le projet" visible sous les titres, avec couleurs différentes */
+    /* CTA "voir le projet" visible et colorée */
 
     .projet-cta {
         display: block;
@@ -446,41 +461,14 @@ img {
         letter-spacing: 0.14em;
     }
 
-    /* Couleurs différentes pour chaque projet (ordre des <article>) */
-
-    .carte-projet:nth-child(1) .projet-cta {
-        color: #27937e;  /* corail */
-    }
-
-    .carte-projet:nth-child(2) .projet-cta {
-        color: #FFB347;  /* orange doux */
-    }
-
-    .carte-projet:nth-child(3) .projet-cta {
-        color: #fa3e96;  /* rose pâle */
-    }
-
-    .carte-projet:nth-child(4) .projet-cta {
-        color: #c20303;  /* vert doux */
-    }
-
-    .carte-projet:nth-child(5) .projet-cta {
-        color: #4D96FF;  /* bleu vif */
-    }
-
-    .carte-projet:nth-child(6) .projet-cta {
-        color: #f9afdf;  /* violet */
-    }
-
-    .carte-projet:nth-child(7) .projet-cta {
-        color: #FF8FA3;  /* rose soutenu */
-    }
-
-    .carte-projet:nth-child(8) .projet-cta {
-        color: #ffe75f;  /* jaune-orangé */
-    }
-
-    .carte-projet:nth-child(9) .projet-cta {
-        color: #ff1c1c;  /* turquoise */
-    }
+    .carte-projet:nth-child(1) .projet-cta { color: #27937e; }
+    .carte-projet:nth-child(2) .projet-cta { color: #FFB347; }
+    .carte-projet:nth-child(3) .projet-cta { color: #fa3e96; }
+    .carte-projet:nth-child(4) .projet-cta { color: #c20303; }
+    .carte-projet:nth-child(5) .projet-cta { color: #4D96FF; }
+    .carte-projet:nth-child(6) .projet-cta { color: #f9afdf; }
+    .carte-projet:nth-child(7) .projet-cta { color: #FF8FA3; }
+    .carte-projet:nth-child(8) .projet-cta { color: #ffe75f; }
+    .carte-projet:nth-child(9) .projet-cta { color: #ff1c1c; }
 }
+
