@@ -1,6 +1,4 @@
-/* ---------------------- */
-/* RESET DE BASE          */
-/* ---------------------- */
+
 
 *,
 *::before,
@@ -26,9 +24,9 @@ a {
     text-decoration: none;
 }
 
-/* ---------------------- */
+
 /* SECTION ACCUEIL        */
-/* ---------------------- */
+
 
 .accueil {
     min-height: 100vh;
@@ -79,9 +77,9 @@ a {
     }
 }
 
-/* ---------------------- */
+
 /* TOPBAR                 */
-/* ---------------------- */
+
 
 .topbar {
     position: sticky;
@@ -109,18 +107,18 @@ a {
     font-size: 0.75rem;
 }
 
-/* ---------------------- */
+
 /* CONTENU GLOBAL         */
-/* ---------------------- */
+
 
 .contenu {
     padding: 40px 16px 60px;
     background: #ffffff;
 }
 
-/* ---------------------- */
+
 /* SECTION PROJETS        */
-/* ---------------------- */
+
 
 .section-projets {
     max-width: 1100px;
@@ -197,7 +195,7 @@ a {
     opacity: 0;
 }
 
-/* Effet hover sur desktop */
+
 
 .carte-projet:hover .projet-img-default {
     opacity: 0;
@@ -214,18 +212,18 @@ a {
     margin: 0;
 }
 
-/* ---------------------- */
+
 /* SECTION À PROPOS       */
-/* ---------------------- */
+
 
 .section-apropos {
     max-width: 700px;
     margin: 0 auto;
 }
 
-/* ---------------------- */
+
 /* PAGES DÉTAIL PROJET    */
-/* ---------------------- */
+
 
 .section-projet-detail {
     max-width: 1350px;
@@ -297,9 +295,9 @@ a {
     text-align: left;
 }
 
-/* ---------------------- */
+
 /* IMAGES GLOBALES        */
-/* ---------------------- */
+
 
 img {
     width: 100%;
@@ -307,9 +305,8 @@ img {
     display: block;
 }
 
-/* ---------------------- */
 /* CV / À PROPOS          */
-/* ---------------------- */
+
 
 .cv-apercu {
     margin-top: 24px;
@@ -358,13 +355,12 @@ img {
     opacity: 0.7;
 }
 
-/* ---------------------- */
 /* RESPONSIVE MOBILE      */
-/* ---------------------- */
+
 
 @media (max-width: 768px) {
 
-    /* Accueil : adapter le nom */
+    
 
     .accueil {
         padding: 0 16px;
@@ -378,9 +374,9 @@ img {
     }
 
     .accueil-nom {
-        font-size: 2.1rem;      /* plus petit sur mobile */
-        letter-spacing: 0.08em; /* moins espacé */
-        white-space: normal;    /* permet le retour à la ligne */
+        font-size: 2.1rem;      
+        letter-spacing: 0.08em; 
+        white-space: normal;    
         line-height: 1.2;
     }
 
@@ -407,7 +403,7 @@ img {
         margin: 0 auto;
     }
 
-    /* Cartes : effet léger + mise en avant au clic */
+    
 
     .carte-projet {
         padding: 0;
@@ -449,7 +445,7 @@ img {
         opacity: 1;
     }
 
-    /* CTA "voir le projet" visible et colorée */
+    /*  "voir le projet" visible et colorée */
 
     .projet-cta {
         display: block;
