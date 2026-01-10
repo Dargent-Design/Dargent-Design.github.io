@@ -1,57 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le double jeu - photographie</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Le double jeu — Méline Dargent</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header class="topbar">
-        <div class="topbar-nom">Méline Dargent</div>
-        <a href="index.html" class="topbar-lien">Retour au portfolio</a>
+  <!-- Topbar identique au portfolio -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html#accueil" class="site-brand">Méline Dargent</a>
+
+      <nav class="site-nav">
+        <a href="index.html#projets" class="site-nav-link nav-back">Retour au portfolio</a>
+        <a href="index.html#projets" class="site-nav-link">Projets</a>
+        <a href="index.html#apropos" class="site-nav-link">À propos</a>
+      </nav>
+    </div>
+    <div class="site-line"></div>
+  </header>
+
+  <main class="project-page">
+
+    <!-- Titre sous la topbar -->
+    <header class="project-hero">
+      <h1 class="project-title">Vincart regular</h1>
+      <p class="project-subtitle">Typographie</p>
     </header>
 
-    <main class="contenu">
-        <section class="section-projet-detail">
-            <h1>Le double jeu</h1>
-            <p class="projet-soustitre"> Édition photographique </p>
+    <!-- Galerie -->
+    <section class="project-gallery">
+      <div class="gallery-grid">
+        <figure class="g-main">
+          <img src="typo vincart/vincart1.webp" alt="Édition photographique — vue principale">
+        </figure>
 
-            <div class="galerie-3">
-                <figure class="galerie-grand">
-                    <img src="photodouble/editionphoto1.webp" >
-                </figure>
-                <figure class="galerie-petit-haut">
-                    <img src="photodouble/editionphoto3.webp" >
-                    </figure>
-                <figure class="galerie-petit-bas">
-                    <img src="photodouble/editionphoto2.webp" >
-                </figure>
-            </div>
+        <figure class="g-small-1">
+          <img src="typo vincart/vincart2.webp" alt="Édition photographique — détail 1">
+        </figure>
 
-           <p class="projet-texte note-intention">
+        <figure class="g-small-2">
+          <img src="typo vincart/vincart3.webp" alt="typo vincart">
+        </figure>
+      </div>
+    </section>
 
+    <!-- Texte + meta -->
+    <section class="project-text">
+      <p class="project-note">
+       À partir d’une plaque émaillée, une typographie a été créée comme un travail de traduction et de systématisation. Chaque lettre de l’alphabet a été pensée à partir de cette matière, puis dessinée et structurée sur le logiciel Glyphs.
+Ici, on transforme un objet existant en un langage typographique cohérent et fonctionnel.
+      </p>
 
-   Un duo, 2 perceptions et des questions qu'on ne pose qu'à soi-même.
-   La réponse à ces questions des photos où se mêle un vrai travail psychologique. 
-   Chaque photo est une confidence déguisée, que seule elle et moi connaissons. 
-   
-</p>
+      <div class="project-meta">
+        <p>12 pages - Reliure spirale</p>
+        <p>Janvier 2026</p>
+      </div>
+    </section>
 
-<p class="meta-projet"> 20 pages- Reliure piqûre à cheval </p>
+    <footer class="project-footer">
+      <div class="project-footer-line"></div>
+    </footer>
 
-<p class="meta-projet">Février 2025</p>
-        </section>
-    </main>
+  </main>
 
-   
-
-
+  <script src="script.js"></script>
 </body>
 </html>

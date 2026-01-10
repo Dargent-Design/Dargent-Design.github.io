@@ -1,182 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio – Méline Dargent</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio – Méline Dargent</title>
 
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap" rel="stylesheet">
 
-    
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 
 <body>
 
-    
-    <section class="accueil">
-        <div class="accueil-ligne">
-            <h1 class="accueil-nom">Méline 
-                Dargent</h1>
-        </div>
+  <!-- HEADER (caché au départ, apparaît aux projets) -->
+  <header class="site-header is-hidden">
+    <div class="site-header-inner">
+      <a href="#accueil" class="site-brand">Méline Dargent</a>
+
+      <nav class="site-nav">
+        <a href="#projets" class="site-nav-link">Projets</a>
+        <a href="#apropos" class="site-nav-link">À propos</a>
+      </nav>
+    </div>
+    <div class="site-line"></div>
+  </header>
+
+  <main class="page">
+
+    <!-- ACCUEIL -->
+    <section id="accueil" class="section-accueil">
+      <div class="accueil-inner">
+        <h1 class="accueil-titre">Méline Dargent</h1>
+        <p class="accueil-sous-titre">Étudiante en design graphique</p>
+      </div>
+
+      <!-- FORMES (5) : derrière le titre -->
+      <div class="accueil-formes" aria-hidden="true">
+        <span class="shape s-goutte"></span>
+        <span class="shape s-blob"></span>
+
+        <!-- ⭐ étoile déplacée en haut à gauche de “Méline” -->
+        <span class="shape s-etoile"></span>
+
+         <span class="shape s-etoile-2"></span>
+
+        <!-- nouvelle forme qui remplace l’ancienne place de l’étoile -->
+        <span class="shape s-pastille"></span>
+
+        <span class="shape s-squiggle"></span>
+      </div>
     </section>
 
-    
-    <header class="topbar">
-        <div class="topbar-nom">MD</div>
-        <a href="#apropos" class="topbar-lien">À propos</a>
-    </header>
+    <!-- PROJETS -->
+    <section id="projets" class="section-projets">
+      <div class="projets-grille">
 
-    
-    <main class="contenu">
-
-       
-       <section id="projets" class="section-projets">
-    <div class="projets-grille">
-
-        <article class="carte-projet">
-            <a href="projet1.html" class="projet-lien">
-                <div class="projet-cadre">
-                    <div class="projet-image">
-                        <img src="titres/titre1.jpg" alt="Projet 1" class="projet-img-default">
-                        <img src="typomagazine/typomagazine.webp" alt="Projet 1 au survol" class="projet-img-hover">
-                    </div>
-                    <p class="projet-cta">voir le projet</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="carte-projet">
-            <a href="projet2.html" class="projet-lien">
-                <div class="projet-cadre">
-                    <div class="projet-image">
-                        <img src="titres/titre2.jpg" alt="Projet 2" class="projet-img-default">
-                        <img src="vynile/vinyle2.webp" alt="Projet 2 au survol" class="projet-img-hover">
-                    </div>
-                    <p class="projet-cta">voir le projet</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="carte-projet">
-            <a href="projet3.html" class="projet-lien">
-                <div class="projet-cadre">
-                    <div class="projet-image">
-                        <img src="titres/titre3.jpg" alt="Projet 3" class="projet-img-default">
-                        <img src="collection/editioncollection.webp" alt="Projet 3 au survol" class="projet-img-hover">
-                    </div>
-                    <p class="projet-cta">voir le projet</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="carte-projet">
-            <a href="projet4.html" class="projet-lien">
-                <div class="projet-cadre">
-                    <div class="projet-image">
-                        <img src="titres/titre4.jpg" alt="Projet 4" class="projet-img-default">
-                        <img src="photodouble/editionphoto1.webp" alt="Projet 4 au survol" class="projet-img-hover">
-                    </div>
-                    <p class="projet-cta">voir le projet</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="carte-projet">
-            <a href="projet5.html" class="projet-lien">
-                <div class="projet-cadre">
-                    <div class="projet-image">
-                        <img src="titres/titre5.jpg" alt="Projet 5" class="projet-img-default">
-                        <img src="afficheactualité/affiche2.webp" alt="Projet 5 au survol" class="projet-img-hover">
-                    </div>
-                    <p class="projet-cta">voir le projet</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="carte-projet">
-            <a href="projet6.html" class="projet-lien">
-                <div class="projet-cadre">
-                    <div class="projet-image">
-                        <img src="titres/titre6.jpg" alt="Projet 6" class="projet-img-default">
-                        <img src="specimen/typospecimen.webp" alt="Projet 6 au survol" class="projet-img-hover">
-                    </div>
-                    <p class="projet-cta">voir le projet</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="carte-projet">
-            <a href="projet7.html" class="projet-lien">
-                <div class="projet-cadre">
-                    <div class="projet-image">
-                        <img src="titres/titre7.jpg" alt="Projet 7" class="projet-img-default">
-                        <img src="miumiu/miumiuriso.webp" alt="Projet 7 au survol" class="projet-img-hover">
-                    </div>
-                    <p class="projet-cta">voir le projet</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="carte-projet">
-            <a href="projet8.html" class="projet-lien">
-                <div class="projet-cadre">
-                    <div class="projet-image">
-                        <img src="titres/titre8.jpg" alt="Projet 8" class="projet-img-default">
-                        <img src="photocuisine/photocuisine.webp" alt="Projet 8 au survol" class="projet-img-hover">
-                    </div>
-                    <p class="projet-cta">voir le projet</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="carte-projet">
-            <a href="projet9.html" class="projet-lien">
-                <div class="projet-cadre">
-                    <div class="projet-image">
-                        <img src="titres/titre9.jpg" alt="Projet 9" class="projet-img-default">
-                        <img src="dessin/grue6.webp" alt="Projet 9 au survol" class="projet-img-hover">
-                    </div>
-                    <p class="projet-cta">voir le projet</p>
-                </div>
-            </a>
-        </article>
-
-    </div>
-</section>
-
-
-       
-        <section id="apropos" class="section-apropos">
-            <h2>À propos</h2>
-            <p>
-                Étudiante en design graphique à l’Ésad d’Amiens en deuxième année, je cherche à développer une pratique expérimentale où se rencontrent typographie, mise en page et recherche plastique.
-            </p>
-
-
-             <div class="cv-apercu">
-        
-        
-
-        <a href="html.cv.html" class="cv-lien">
-            Voir mon CV 
+        <a class="carte-projet carte-projet--tall" href="projet1.html">
+          <img src="typomagazine/typomagazine.webp" alt="L'Art Nouveau">
+          <span class="projet-titre">L'Art Nouveau</span>
         </a>
-    </div>
-</section>
-        </section>
 
-        
+        <a class="carte-projet" href="projet2.html">
+          <img src="vynile/vinyle2.webp" alt="Bossa Nova">
+          <span class="projet-titre">Sergio Mendes</span>
+        </a>
 
-    </main>
+        <a class="carte-projet" href="projet3.html">
+          <img src="collection/editioncollection.webp" alt="Féricarbophile">
+          <span class="projet-titre">Féricarbophile</span>
+        </a>
 
-    
+        <a class="carte-projet carte-projet--wide" href="projet4.html">
+          <img src="typo vincart/typovincart.jpg" alt="Vincart">
+          <span class="projet-titre">Vincart</span>
+        </a>
+
+        <a class="carte-projet carte-projet--big" href="projet5.html">
+          <img src="specimen/typospecimen.webp" alt="Museo Moderno">
+          <span class="projet-titre">Museo Moderno</span>
+        </a>
+
+        <a class="carte-projet" href="projet6.html">
+          <img src="afficheactualité/affiche2.webp" alt="L'actualité affichée">
+         <span class="projet-titre">L'actualité affichée</span>
+        </a>
+
+        <a class="carte-projet" href="projet7.html">
+          <img src="calendrier/calendrier.webp" alt="Calendrier perpetuel">
+          <span class="projet-titre">Calendrier perpetuel</span>
+        </a>
+
+        <a class="carte-projet" href="projet8.html">
+          <img src="photocuisine/photocuisine4webp.webp" alt="Humeurs italiennes">
+          <span class="projet-titre">Humeurs italiennes</span>
+        </a>
+
+        <a class="carte-projet carte-projet--tall" href="projet9.html">
+          <img src="dessin/grue6.webp" alt="La grue du Japon">
+          <span class="projet-titre">La grue du Japon</span>
+        </a>
+
+        <a class="carte-projet" href="projet10.html">
+  <img src="miumiu/miumiuriso.webp" alt="miumiuriso">
+  <span class="projet-titre">Miumiu riso</span>
+</a>
 
 
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="apropos" class="section-apropos">
+      <h2>À propos</h2>
+      <p>
+        Étudiante en design graphique à l’Ésad d’Amiens en deuxième année, je cherche à développer une pratique
+        expérimentale où se rencontrent typographie, mise en page et recherche plastique.
+      </p>
+      <p class="apropos-cta">
+        <a href="html.cv.html" class="cv-lien">Voir mon CV</a>
+      </p>
+
+       <div class="cv-download-section">
+    <a href="MélineDargentPORTFOLIO.pdf"
+       class="cv-download-btn"
+       download>
+      Télécharger le portfolio (PDF)
+    </a>
+  </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-line"></div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+
+  
 </body>
 </html>
-
-

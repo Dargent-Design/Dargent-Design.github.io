@@ -1,131 +1,310 @@
-/* Style global */
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background-color: #ffffff;
-    color: rgb(16, 5, 78);
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 20px;
-    line-height: 1.6;
+/* =========================
+   stylecv.css — CV (cohérent avec portfolio)
+========================= */
+
+/* RESET */
+*,
+*::before,
+*::after{ box-sizing: border-box; }
+
+html, body{ margin:0; padding:0; }
+
+img{ max-width:100%; display:block; }
+a{ color: inherit; text-decoration:none; }
+
+/* VARIABLES */
+:root{
+  --ink: #6b6b6b;
+  --bg: #ffffff;
+
+  --font-display: "Alumni Sans Pinstripe", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --max: 900px;
+  --pad: 16px;
+  --radius: 10px;
+
+  /* palette portfolio */
+  --c-bleu: #b1b3ee;
+  --c-rose: #e8addd;
+  --c-vert: #808745;
+  --c-orange: #ff3b1a;
+  --c-fuchsia: #ff79d6;
 }
 
-/* En-tête */
-.entete {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;  /* nom à gauche, lien à droite */
-    margin-bottom: 40px;
+/* BASE */
+.cv-body{
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  overflow-x: hidden;
 }
 
-/* Photo si tu veux en ajouter une plus tard */
-.photo {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border: 3px solid rgb(16, 5, 78);
+/* =========================
+   TOPBAR (même langage que portfolio)
+========================= */
+
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
 }
 
-/* Titres */
-h1 {
-    font-family: "Momo Trust Display", system-ui, sans-serif;
-    color: rgb(16, 5, 78);
-    font-size: 48px;
-    margin: 0;
+.site-header-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px var(--pad) 10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 16px;
 }
 
-h2 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    margin: 0 0 12px 0;
+.site-brand{
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
-/* Sous-titre sous le nom (même typo que le texte, pas Momo Display) */
-.sous-titre {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: rgb(16, 5, 78);
-    font-size: 18px;
-    font-weight: 400;
-    margin: 4px 0 0 0;
+.site-nav{
+  display:flex;
+  gap: 18px;
+  align-items: center;
 }
 
-/* Blocs de sections */
-.cv-section {
-    background-color: #fff;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 24px;
+.site-nav-link{
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
 }
 
-/* Grille année / activité (études + expériences) */
-.grid {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
+.site-nav-link:hover{ opacity: 0.7; }
+
+.site-line{
+  max-width: var(--max);
+  margin: 0 auto;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.85;
 }
 
-.annee {
-    font-style: italic;
-    color: rgb(16, 5, 78);
-    font-weight: 100;
+/* =========================
+   HERO CV
+========================= */
+
+.cv-hero{
+  position: relative;
+  max-width: var(--max);
+  margin: 26px auto 0;
+  padding: 22px var(--pad) 26px;
 }
 
-.activite {
-    margin: 0;
+.cv-hero-inner{
+  position: relative;
+  z-index: 5;
 }
 
-/* Centres d’intérêts : une seule colonne + plus d'espace entre les lignes */
-.centres-interets .grid {
-    grid-template-columns: 1fr;    /* plus de colonne année */
-    margin-bottom: 18px;           /* plus d'air entre chaque intérêt */
+.cv-title{
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+
+  -webkit-text-stroke: 0.55px currentColor;
+  text-shadow: 0.35px 0 currentColor, -0.35px 0 currentColor;
 }
 
-/* Texte des centres d’intérêts */
-.centre-interet {
-    font-weight: 300;
-    margin: 0;
-    line-height: 1.7;
+.cv-subtitle{
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.8;
+  letter-spacing: 0.04em;
 }
 
-/* Petit point devant chaque centre d’intérêt */
-.centre-interet::before {
-    content: "• ";
-    font-weight: 300;
+/* =========================
+   FORMES — CV (latérales, rapprochées)
+========================= */
+
+.cv-formes{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Lien retour portfolio */
-.retour-portfolio {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    text-decoration: none;
-    padding-top: 4px;
-    color: rgb(16, 5, 78);
+/* base */
+.shape{
+  position: absolute;
+  opacity: 0.32;          /* un peu plus présentes */
+  mix-blend-mode: multiply;
 }
 
-.retour-portfolio:hover {
-    opacity: 0.7;
+/* Goutte — gauche, proche du texte */
+.s-goutte{
+  width: 130px;
+  height: 130px;
+  background: #b1b3ee;
+  border-radius: 60% 40% 55% 45%;
+  top: 110px;
+  left: 24px;             /* AVANT : -60px */
 }
 
-/* Un peu de responsive pour téléphone */
-@media (max-width: 600px) {
-    body {
-        margin: 20px auto;
-        padding: 16px;
-    }
+/* Blob — milieu gauche */
+.s-blob{
+  width: 210px;
+  height: 150px;
+  background: #e8addd;
+  border-radius: 55% 45% 50% 50%;
+  top: 340px;
+  left: 12px;             /* AVANT : -90px */
+}
 
-    h1 {
-        font-size: 36px;
-    }
+/* Étoile — droite haute, proche colonne texte */
+.s-etoile{
+  width: 85px;
+  height: 85px;
+  background: #808745;
+  top: 160px;
+  right: 24px;            /* AVANT : -40px */
+  rotate: -12deg;
+  clip-path: polygon(
+    50% 0%, 60% 28%, 90% 18%, 70% 45%,
+    100% 55%, 68% 62%, 78% 92%, 50% 74%,
+    22% 92%, 32% 62%, 0% 55%, 30% 45%,
+    10% 18%, 40% 28%
+  );
+}
 
-    .entete {
-        flex-direction: column;
-        gap: 8px;
-        align-items: flex-start;
-    }
+/* Pastille — bas droit */
+.s-pastille{
+  width: 160px;
+  height: 120px;
+  background: #ff3b1a;
+  bottom: 140px;
+  right: 18px;            /* AVANT : -70px */
+  border-radius: 36% 64% 55% 45% / 55% 45% 55% 45%;
 }
 
 
+/* =========================
+   MAIN
+========================= */
 
+.cv-main{
+  max-width: var(--max);
+  margin: 10px auto 70px;
+  padding: 0 var(--pad);
+}
+
+/* Sections */
+.cv-section{
+  margin-top: 44px;
+}
+
+.cv-section h2{
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 1.2rem;
+}
+
+/* Lignes */
+.cv-row{
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+  padding: 6px 0;
+}
+
+.cv-row--one{
+  grid-template-columns: 1fr;
+}
+
+.annee{
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.activite{
+  margin: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px){
+  .cv-row{
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .cv-formes{
+    height: 190px;
+  }
+
+  .s-blob{ left: 22%; }
+  .s-squiggle{ left: 44%; }
+}
+
+/* =========================
+   PRINT / PDF
+========================= */
+
+@media print{
+  .site-header{ position: static; }
+  .site-nav{ display: none; }
+  .cv-formes{ display: none; }
+
+  body{
+    color: #000;
+    background: #fff;
+    font-size: 11pt;
+  }
+
+  .cv-section{
+    page-break-inside: avoid;
+  }
+}
+/* =========================
+   BOUTON TÉLÉCHARGER CV
+========================= */
+
+.cv-download-section{
+  margin-top: 60px;
+  text-align: center;
+}
+
+.cv-download-btn{
+  display: inline-block;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.95rem;
+
+  padding: 14px 22px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.cv-download-btn:hover{
+  background: rgba(107,107,107,0.08);
+  opacity: 1;
+}
 

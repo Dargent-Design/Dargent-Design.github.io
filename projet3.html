@@ -1,66 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Féricarbophile - collection</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collectionneur — Méline Dargent</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header class="topbar">
-        <div class="topbar-nom">Méline Dargent</div>
-        <a href="index.html" class="topbar-lien">Retour au portfolio</a>
+  <!-- Topbar identique au portfolio -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html#accueil" class="site-brand">Méline Dargent</a>
+
+      <nav class="site-nav">
+        <a href="index.html#projets" class="site-nav-link nav-back">Retour au portfolio</a>
+        <a href="index.html#projets" class="site-nav-link">Projets</a>
+        <a href="index.html#apropos" class="site-nav-link">À propos</a>
+      </nav>
+    </div>
+    <div class="site-line"></div>
+  </header>
+
+  <main class="project-page">
+
+    <!-- Titre sous la topbar -->
+    <header class="project-hero">
+      <h1 class="project-title">Collectionneur</h1>
+      <p class="project-subtitle">Féricarbophile</p>
     </header>
 
-    <main class="contenu">
-        <section class="section-projet-detail">
-            <h1>Collectionneur</h1>
-            <p class="projet-soustitre">Féricarbophile</p>
+    <!-- Galerie -->
+    <section class="project-gallery">
 
-            <div class="galerie-3">
-                <figure class="galerie-grand">
-                    <img src="collection/collection4.webp" >
-                </figure>
-                <figure class="galerie-petit-haut"> 
-                    <img src="collection/editioncollection.webp" >
-                </figure>
-                <figure class="galerie-petit-bas">
-                    <img src="collection/editioncollection2.webp" >
-                </figure>
-            </div>
+      <div class="gallery-grid">
+        <figure class="g-main">
+          <img src="collection/collection4.webp" alt="Vue principale du projet Collectionneur">
+        </figure>
 
-             <div class="galerie-bas">
+        <figure class="g-small-1">
+          <img src="collection/editioncollection.webp" alt="Édition — aperçu 1">
+        </figure>
+
+        <figure class="g-small-2">
+          <img src="collection/editioncollection2.webp" alt="Édition — aperçu 2">
+        </figure>
+      </div>
+
+      <div class="gallery-row">
         <figure>
-            <img src="collection/editioncollection1webp.webp" alt="Image allongée 1">
+          <img src="collection/editioncollection1webp.webp" alt="Édition — double page">
         </figure>
         <figure>
-            <img src="collection/collection5.webp" alt="Image allongée 2">
+          <img src="collection/collection5.webp" alt="Affiche — collection organisée">
         </figure>
-    </div>
+      </div>
 
-           <p class="projet-texte note-intention">
+    </section>
 
+    <!-- Texte + meta -->
+    <section class="project-text">
+      <p class="project-note">
+        À partir d’une collection d’objets en acier, une édition retrace la recherche visuelle menée autour de ces objets,
+        de leur forme brute à leur interprétation graphique. Tandis que l’affiche rassemble l’ensemble des pièces récoltées,
+        minutieusement organisées. Le but est simple : révéler l’esthétique insoupçonnée de l’acier à travers une collection
+        inattendue.
+      </p>
 
-  À partir d’une collection  d’objets en acier, une édition retrace la recherche visuelle menée autour de ces objets, de leur forme brute à leur interprétation graphique. 
-Tandis que l’affiche rassemble l’ensemble des pièces récoltées, minutieusement organisées. 
-Le but est simple révéler l’esthétique insoupçonnée de l’acier à travers une collection inattendue. 
-</p>
+      <div class="project-meta">
+        <p>72 pages — reliure dos carré collé</p>
+        <p>Mai 2025</p>
+      </div>
+    </section>
 
-<p class="meta-projet"> 72 pages- Reliure dos carré collé</p>
+    <footer class="project-footer">
+      <div class="project-footer-line"></div>
+    </footer>
 
-<p class="meta-projet">Mai 2025</p>
+  </main>
 
-        </section>
-    </main>
-
-    
-
-
+  <script src="script.js"></script>
 </body>
 </html>

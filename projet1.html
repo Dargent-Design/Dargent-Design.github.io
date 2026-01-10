@@ -1,79 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Art Nouveau - magazine</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>L'Art Nouveau — Méline Dargent</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header class="topbar">
-        <div class="topbar-nom">Méline Dargent</div>
-        <a href="index.html" class="topbar-lien">Retour au portfolio</a>
+  <!-- Topbar identique au portfolio -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html#accueil" class="site-brand">Méline Dargent</a>
+
+      <nav class="site-nav">
+  <a href="index.html#projets" class="site-nav-link nav-back">Retour au portfolio</a>
+  <a href="index.html#projets" class="site-nav-link">Projets</a>
+  <a href="index.html#apropos" class="site-nav-link">À propos</a>
+</nav>
+
+    </div>
+    <div class="site-line"></div>
+  </header>
+
+  <main class="project-page">
+
+    <!-- Titre sous la topbar -->
+    <header class="project-hero">
+      <h1 class="project-title">L’Art Nouveau</h1>
+      <p class="project-subtitle">Magazine collaboratif</p>
     </header>
 
-  <main class="contenu">
-    <section class="section-projet-detail">
-        <h1>L'Art Nouveau</h1>
-        <p>Magazine collaboratif</p>
+    <!-- Galerie -->
+    <section class="project-gallery">
+      <div class="gallery-grid">
+        <figure class="g-main">
+          <img src="typomagazine/typomagazine.webp" alt="Image principale du projet">
+        </figure>
 
-        
-        <div class="galerie-3">
-            <figure class="galerie-grand">
-                <img src="typomagazine/typomagazine.webp" alt="Image principale du projet">
-            </figure>
-            <figure class="galerie-petit-haut">
-                <img src="typomagazine/affichetypo.webp" alt="Détail du projet">
-            </figure>
-            <figure class="galerie-petit-bas">
-                <img src="typomagazine/typomagazine5.webp" alt="Autre vue du projet">
-            </figure>
+        <figure class="g-small-1">
+          <img src="typomagazine/affichetypo.webp" alt="Détail du projet">
+        </figure>
 
-           
-        
-        </div>
+        <figure class="g-small-2">
+          <img src="typomagazine/typomagazine5.webp" alt="Autre vue du projet">
+        </figure>
+      </div>
 
-        <div class="galerie-bas">
+      <div class="gallery-row">
         <figure>
-            <img src="typomagazine/magazinetypo2.webp" alt="Image allongée 1">
+          <img src="typomagazine/magazinetypo2.webp" alt="Image allongée 1">
         </figure>
         <figure>
-            <img src="typomagazine/magazinetypo3.webp" alt="Image allongée 2">
+          <img src="typomagazine/magazinetypo3.webp" alt="Image allongée 2">
         </figure>
-    </div>
-
-     
-
-
-
-
-<p class="projet-texte note-intention">
-     En passant par les fresques de Gustave Klimpt, l’architecture emblématique de Gaudi 
-    ou encore le travail de Hector Guimard. 
-    Cette revue reprend tous les codes de l’Art Nouveau grâce à une bibliographie composée 
-    de 10 livres choisis en collaboration avec la documentation d’Amiens.
-    Le but est simple : réussir à franchir le seuil de la documentation et rencontrer Peggy !
-    
-</p>
-
-
-<p class="meta-projet">14 pages - reliure cousue</p>
-
-<p class="meta-projet">Avril 2025</p>
-
-
+      </div>
     </section>
-</main>
 
+    <section class="project-text">
+      <p class="project-note">
+        En passant par les fresques de Gustave Klimpt, l’architecture emblématique de Gaudi
+        ou encore le travail de Hector Guimard. Cette revue reprend tous les codes de l’Art Nouveau
+        grâce à une bibliographie composée de 10 livres choisis en collaboration avec la documentation d’Amiens.
+        Le but est simple : réussir à franchir le seuil de la documentation et rencontrer Peggy !
+      </p>
 
+      <div class="project-meta">
+        <p>14 pages — reliure cousue</p>
+        <p>Avril 2025</p>
+      </div>
+    </section>
 
+    <footer class="project-footer">
+      <div class="project-footer-line"></div>
+    </footer>
 
+  </main>
 
 </body>
 </html>

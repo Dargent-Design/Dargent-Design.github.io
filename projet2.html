@@ -1,56 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La bossa nova - vinyle</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sergio Mendes — Méline Dargent</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header class="topbar">
-        <div class="topbar-nom">Méline Dargent</div>
-        <a href="index.html" class="topbar-lien">Retour au portfolio</a>
+  <!-- Topbar identique au portfolio (+ retour visible uniquement sur pages projet via .nav-back) -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html#accueil" class="site-brand">Méline Dargent</a>
+
+      <nav class="site-nav">
+        <a href="index.html#projets" class="site-nav-link nav-back">Retour au portfolio</a>
+        <a href="index.html#projets" class="site-nav-link">Projets</a>
+        <a href="index.html#apropos" class="site-nav-link">À propos</a>
+      </nav>
+    </div>
+    <div class="site-line"></div>
+  </header>
+
+  <main class="project-page">
+
+    <!-- Titre sous la topbar -->
+    <header class="project-hero">
+      <h1 class="project-title">Sergio Mendes</h1>
+      <p class="project-subtitle">Vinyles Sergio Mendes</p>
     </header>
 
-    <main class="contenu">
-        <section class="section-projet-detail">
-            <h1>La bossa nova </h1>
-            <p class="projet-soustitre">Vinyles Sergio Mendes</p>
+    <!-- Galerie -->
+    <section class="project-gallery">
+      <div class="gallery-grid">
+        <figure class="g-main">
+          <img src="vynile/vinyle1.webp" alt="Pochette vinyle — visuel principal">
+        </figure>
 
-            <div class="galerie-3">
-                <figure class="galerie-grand">
-                    <img src="vynile/vinyle1.webp" alt="Double page du magazine Art Nouveau">
-                </figure>
-                <figure class="galerie-petit-haut">
-                    <img src="vynile/vinyle2.webp" alt="Détail typographique Art Nouveau">
-                </figure>
-                <figure class="galerie-petit-bas">
-                    <img src="vynile/vinyle3.webp" alt="Couverture du magazine Art Nouveau">
-                </figure>
-            </div>
+        <figure class="g-small-1">
+          <img src="vynile/vinyle2.webp" alt="Pochette vinyle — variation 1">
+        </figure>
 
-            
-<p class="projet-texte note-intention">
+        <figure class="g-small-2">
+          <img src="vynile/vinyle3.webp" alt="Pochette vinyle — variation 2">
+        </figure>
+      </div>
+    </section>
 
+    <!-- Texte + meta -->
+    <section class="project-text">
+      <p class="project-note">
+        Imagination et conception de 3 pochettes vinyles pour l’artiste Sergio Mendes,
+        figure emblématique brésilienne de la Bossa Nova. Ici, couleurs festives,
+        ambiance latino et relief typique de Copacabana sont les maîtres mots.
+      </p>
 
-   Imagination et conception de 3 pochettes vinyles pour l’artiste Sergio Mendes, figure emblématique brésilienne de la Bossa Nova. 
-Ici, couleurs festives, ambiance latino et relief typique de copacabana sont les maîtres mots. 
-</p>
+      <div class="project-meta">
+        <p>3 propositions</p>
+        <p>Mai 2025</p>
+      </div>
+    </section>
 
-<p class="meta-projet">3 Propositions</p>
+    <footer class="project-footer">
+      <div class="project-footer-line"></div>
+    </footer>
 
-<p class="meta-projet">Mai 2025</p>
+  </main>
 
-        </section>
-    </main>
-
-    
-
+  <script src="script.js"></script>
 </body>
 </html>
+
