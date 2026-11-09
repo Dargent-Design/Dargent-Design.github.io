@@ -1,310 +1,415 @@
-/* =========================
-   stylecv.css — CV (cohérent avec portfolio)
-========================= */
+/* ========================================
+   RESET
+======================================== */
 
-/* RESET */
 *,
 *::before,
-*::after{ box-sizing: border-box; }
-
-html, body{ margin:0; padding:0; }
-
-img{ max-width:100%; display:block; }
-a{ color: inherit; text-decoration:none; }
-
-/* VARIABLES */
-:root{
-  --ink: #6b6b6b;
-  --bg: #ffffff;
-
-  --font-display: "Alumni Sans Pinstripe", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-  --max: 900px;
-  --pad: 16px;
-  --radius: 10px;
-
-  /* palette portfolio */
-  --c-bleu: #b1b3ee;
-  --c-rose: #e8addd;
-  --c-vert: #808745;
-  --c-orange: #ff3b1a;
-  --c-fuchsia: #ff79d6;
+*::after {
+  box-sizing: border-box;
 }
 
-/* BASE */
-.cv-body{
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--ink);
-  line-height: 1.65;
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-/* =========================
-   TOPBAR (même langage que portfolio)
-========================= */
+body {
+  margin: 0;
+  background: #f7f5f0;
+  color: #222;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
 
-.site-header{
+
+/* ========================================
+   HEADER
+======================================== */
+
+.cv-header {
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 15px 40px;
+
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(6px);
+  z-index: 100;
+
+  background: rgba(247, 245, 240, 0.95);
+  backdrop-filter: blur(8px);
 }
 
-.site-header-inner{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 18px var(--pad) 10px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 16px;
+
+/* Retour */
+
+.cv-back {
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+
+  color: #222;
+  text-decoration: none;
+
+  margin-left: 0;
+
+  transition: opacity 0.3s ease;
 }
 
-.site-brand{
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 1.25rem;
-  line-height: 1;
+.cv-back:hover {
+  opacity: 0.5;
 }
 
-.site-nav{
-  display:flex;
-  gap: 18px;
-  align-items: center;
-}
-
-.site-nav-link{
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.9rem;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 2px;
-}
-
-.site-nav-link:hover{ opacity: 0.7; }
-
-.site-line{
-  max-width: var(--max);
-  margin: 0 auto;
-  height: 1px;
-  background: var(--ink);
-  opacity: 0.85;
-}
-
-/* =========================
-   HERO CV
-========================= */
-
-.cv-hero{
-  position: relative;
-  max-width: var(--max);
-  margin: 26px auto 0;
-  padding: 22px var(--pad) 26px;
-}
-
-.cv-hero-inner{
-  position: relative;
-  z-index: 5;
-}
-
-.cv-title{
-  margin: 0 0 6px;
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  font-size: clamp(2.4rem, 5vw, 3.2rem);
-
-  -webkit-text-stroke: 0.55px currentColor;
-  text-shadow: 0.35px 0 currentColor, -0.35px 0 currentColor;
-}
-
-.cv-subtitle{
-  margin: 0;
-  font-size: 1rem;
-  opacity: 0.8;
-  letter-spacing: 0.04em;
-}
-
-/* =========================
-   FORMES — CV (latérales, rapprochées)
-========================= */
-
-.cv-formes{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* base */
-.shape{
+/* Ligne fine sous l'en-tête, comme sur les pages projets */
+.cv-header::after {
+  content: "";
   position: absolute;
-  opacity: 0.32;          /* un peu plus présentes */
-  mix-blend-mode: multiply;
-}
-
-/* Goutte — gauche, proche du texte */
-.s-goutte{
-  width: 130px;
-  height: 130px;
-  background: #b1b3ee;
-  border-radius: 60% 40% 55% 45%;
-  top: 110px;
-  left: 24px;             /* AVANT : -60px */
-}
-
-/* Blob — milieu gauche */
-.s-blob{
-  width: 210px;
-  height: 150px;
-  background: #e8addd;
-  border-radius: 55% 45% 50% 50%;
-  top: 340px;
-  left: 12px;             /* AVANT : -90px */
-}
-
-/* Étoile — droite haute, proche colonne texte */
-.s-etoile{
-  width: 85px;
-  height: 85px;
-  background: #808745;
-  top: 160px;
-  right: 24px;            /* AVANT : -40px */
-  rotate: -12deg;
-  clip-path: polygon(
-    50% 0%, 60% 28%, 90% 18%, 70% 45%,
-    100% 55%, 68% 62%, 78% 92%, 50% 74%,
-    22% 92%, 32% 62%, 0% 55%, 30% 45%,
-    10% 18%, 40% 28%
-  );
-}
-
-/* Pastille — bas droit */
-.s-pastille{
-  width: 160px;
-  height: 120px;
-  background: #ff3b1a;
-  bottom: 140px;
-  right: 18px;            /* AVANT : -70px */
-  border-radius: 36% 64% 55% 45% / 55% 45% 55% 45%;
+  left: 40px;
+  right: 40px;
+  bottom: 0;
+  height: 1px;
+  background: #dedbd3;
 }
 
 
-/* =========================
-   MAIN
-========================= */
+/* ========================================
+   INTRODUCTION
+======================================== */
 
-.cv-main{
-  max-width: var(--max);
-  margin: 10px auto 70px;
-  padding: 0 var(--pad);
+.cv-intro {
+  margin-left: 8vw !important;
+  width: auto;
+
+  padding-top: 80px;
+  padding-bottom: 90px;
 }
 
-/* Sections */
-.cv-section{
-  margin-top: 44px;
+
+/* Titre */
+
+.cv-title-image {
+  width: 400px;
+
+  margin-top: 0;
+  margin-bottom: 45px;
 }
 
-.cv-section h2{
-  margin: 0 0 18px;
-  font-family: var(--font-display);
+.cv-title-image img {
+  width: 100%;
+  display: block;
+  mix-blend-mode: multiply;   /* le fond blanc de l'image devient beige */
+}
+
+
+/* Texte d'introduction */
+
+.cv-intro p {
+  max-width: 620px;
+
+  margin: 0;
+
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-size: 30px;
+  line-height: 1.25;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* ========================================
+   CONTENU PRINCIPAL
+======================================== */
+
+.cv-main {
+  margin-left: 8vw !important;
+  width: 84%;
+  max-width: 1200px;
+}
+
+
+/* ========================================
+   SECTIONS
+======================================== */
+
+.cv-section {
+  border-top: 1px solid #222;
+
+  padding: 45px 0 55px;
+
+  display: grid;
+
+  grid-template-columns: 220px 1fr;
+
+  gap: 50px;
+}
+
+
+/* Titres de sections */
+
+.cv-section h2 {
+  margin: 0;
+
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 1.2rem;
 }
+
+
+/* ========================================
+   CONTENU
+======================================== */
+
+.cv-content {
+  max-width: 650px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+}
+
 
 /* Lignes */
-.cv-row{
+
+.cv-row {
   display: grid;
+
   grid-template-columns: 160px 1fr;
-  gap: 20px;
-  padding: 6px 0;
+
+  column-gap: 35px;
+
+  align-items: start;
 }
 
-.cv-row--one{
-  grid-template-columns: 1fr;
-}
 
-.annee{
+.cv-row span {
   margin: 0;
-  font-size: 0.95rem;
-  opacity: 0.8;
+
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.activite{
+
+.cv-row p {
   margin: 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+
+  line-height: 1.7;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
-@media (max-width: 700px){
-  .cv-row{
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
+/* ========================================
+   COMPÉTENCES / TAGS
+======================================== */
 
-  .cv-formes{
-    height: 190px;
-  }
+.tags {
+  display: flex;
 
-  .s-blob{ left: 22%; }
-  .s-squiggle{ left: 44%; }
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  max-width: 650px;
 }
 
-/* =========================
-   PRINT / PDF
-========================= */
 
-@media print{
-  .site-header{ position: static; }
-  .site-nav{ display: none; }
-  .cv-formes{ display: none; }
+.tags span {
+  border: 1px solid #222;
 
-  body{
-    color: #000;
-    background: #fff;
-    font-size: 11pt;
-  }
+  border-radius: 30px;
 
-  .cv-section{
-    page-break-inside: avoid;
-  }
-}
-/* =========================
-   BOUTON TÉLÉCHARGER CV
-========================= */
+  padding: 8px 16px;
 
-.cv-download-section{
-  margin-top: 60px;
-  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
-.cv-download-btn{
+
+.tags span:hover {
+  background: #222;
+  color: #fff;
+}
+
+
+/* ========================================
+   TÉLÉCHARGEMENT
+======================================== */
+
+.download {
+  margin-left: 8vw !important;
+
+  padding: 70px 0 100px;
+}
+
+
+.download a {
   display: inline-block;
-  font-family: var(--font-display);
+
+  border: 1px solid #222;
+  border-radius: 40px;
+
+  padding: 15px 25px;
+
+  color: #222;
+  text-decoration: none;
+
+  font-family: "Quicksand", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 0.95rem;
 
-  padding: 14px 22px;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-
-  transition: background 0.2s ease, opacity 0.2s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
-.cv-download-btn:hover{
-  background: rgba(107,107,107,0.08);
-  opacity: 1;
+
+.download a:hover {
+  background: #222;
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+  /* HEADER */
+
+  .cv-header {
+    height: 80px;
+
+    padding: 15px 25px;
+  }
+
+  .cv-back {
+    font-size: 13px;
+  }
+
+  .cv-header::after {
+    left: 25px;
+    right: 25px;
+  }
+
+
+  /* INTRO */
+
+  .cv-intro {
+    margin-left: 25px !important;
+
+    width: calc(100% - 50px);
+
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+
+
+  .cv-title-image {
+    width: 280px;
+
+    margin-bottom: 35px;
+  }
+
+
+  .cv-intro p {
+    font-size: 25px;
+    line-height: 1.25;
+  }
+
+
+  /* MAIN */
+
+  .cv-main {
+    margin-left: 25px !important;
+
+    width: calc(100% - 50px);
+  }
+
+
+  /* SECTIONS */
+
+  .cv-section {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 35px 0 45px;
+  }
+
+
+  .cv-section h2 {
+    font-size: 13px;
+  }
+
+
+  /* ROWS */
+
+  .cv-row {
+    grid-template-columns: 1fr;
+
+    gap: 5px;
+  }
+
+
+  .cv-row span {
+    font-size: 13px;
+  }
+
+
+  .cv-row p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+
+  /* TAGS */
+
+  .tags {
+    gap: 8px;
+  }
+
+
+  .tags span {
+    padding: 7px 13px;
+
+    font-size: 12px;
+  }
+
+
+  /* DOWNLOAD */
+
+  .download {
+    margin-left: 25px !important;
+
+    padding: 55px 0 80px;
+  }
+
+
+  .download a {
+    font-size: 12px;
+
+    padding: 14px 20px;
+  }
 }
 

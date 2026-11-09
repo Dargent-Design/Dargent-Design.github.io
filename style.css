@@ -1,665 +1,1012 @@
-/* =========================
-   style.css — GLOBAL (Accueil + Projets + Pages projet)
-========================= */
+/* Police chargée ici pour TOUTES les pages, même si le HTML l'oublie */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap");
 
-/* -------- RESET -------- */
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
-html, body{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
-img{ max-width: 100%; display: block; }
-figure{ margin: 0; }
-a{ color: inherit; text-decoration: none; }
-
-/* -------- VARIABLES -------- */
-:root{
-  --ink: #6b6b6b;
-  --bg: #ffffff;
-
-  --font-display: "Alumni Sans Pinstripe", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-  --max: 1100px;
-  --pad: 16px;
-
-  --line: 1px solid rgba(107,107,107,0.85);
-  --radius: 6px;
-
-  /* couleurs formes */
-  --c-bleu: #b1b3ee;
-  --c-rose: #e8addd;
-  --c-vert: #808745;
-  --c-orange: #ff3b1a;
-  --c-fuchsia: #ff79d6;
+body {
+  background: #f7f5f0;
+  color: #222;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
 }
 
-/* -------- BASE -------- */
-body{
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--ink);
-}
+/* ========================================
+   EN-TÊTE DE LA PAGE D'ACCUEIL
+======================================== */
 
-/* -------- HELPERS -------- */
-.container{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 var(--pad);
-}
-
-.line{
-  max-width: var(--max);
-  margin: 0 auto;
-  height: 1px;
-  background: var(--ink);
-  opacity: 0.85;
-}
-
-/* =========================
-   HEADER (commun)
-   - utilisé sur l’accueil (sticky + caché au départ)
-   - utilisé sur pages projet (toujours visible)
-========================= */
-
-.site-header{
+.top-header {
+  width: 100%;
+  height: 90px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 15px 40px;
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(6px);
-  transition: transform 0.35s ease, opacity 0.35s ease;
+  z-index: 100;
+  background: rgba(247, 245, 240, 0.95);
+  backdrop-filter: blur(8px);
 }
 
-.site-header.is-hidden{
-  transform: translateY(-110%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.site-header-inner{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 18px var(--pad) 10px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 16px;
-}
-
-.site-brand{
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 1.25rem;
-  line-height: 1;
-}
-
-.site-nav{
-  display:flex;
-  gap: 18px;
+.nav-left {
+  display: flex;
   align-items: center;
+  gap: 30px;
 }
 
-.site-nav-link{
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.95rem;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
+.nav-left a {
+  color: #222;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  transition: opacity 0.3s ease;
 }
 
-.site-nav-link:hover{ border-bottom-color: var(--ink); }
-
-.site-line{
-  max-width: var(--max);
-  margin: 0 auto;
-  height: 1px;
-  background: var(--ink);
-  opacity: 0.85;
+.nav-left a:hover {
+  opacity: 0.5;
 }
 
-/* =========================
-   PAGE (commun)
-========================= */
-
-.page{
-  padding-bottom: 60px;
-}
-
-/* =========================
-   ACCUEIL
-========================= */
-
-.section-accueil{
-  position: relative;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-/* Texte */
-.accueil-inner{
-  position: relative;
-  z-index: 5;
+.logo {
+  display: block;
   text-align: center;
 }
 
-.accueil-titre{
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.24em;
-  font-size: clamp(3.4rem, 7vw, 5.6rem);
-  margin: 0;
-
-  /* renfort visuel */
-  -webkit-text-stroke: 0.6px currentColor;
-  text-shadow: 0.4px 0 currentColor, -0.4px 0 currentColor;
+.logo img {
+  display: block;
+  width: 85px;
+  height: auto;
+  mix-blend-mode: multiply;   /* le fond blanc du logo prend la couleur beige */
 }
 
-.accueil-sous-titre{
-  font-family: var(--font-body);
-  font-size: clamp(1rem, 1.6vw, 1.2rem);
-  letter-spacing: 0.06em;
-  opacity: 0.75;
-  margin: 12px 0 0;
-  text-align: center;
-  text-shadow: 0.25px 0 currentColor;
+.nav-right {
+  min-width: 1px;
 }
 
-/* Formes */
-.accueil-formes{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: min(920px, 96vw);
-  height: min(520px, 74vh);
-  transform: translate(-50%, -56%);
-  pointer-events: none;
-  z-index: 2;
-  border-radius: 999px;
+/* ========================================
+   INTRODUCTION / PORTRAIT
+======================================== */
+
+.intro {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8vw;
+  padding: 80px 8vw;
 }
 
-.shape{
-  position: absolute;
-  opacity: 0;
-  transform: translateY(18px) scale(0.96);
-  animation: shapeIn 900ms cubic-bezier(.2,.8,.2,1) forwards;
-  mix-blend-mode: multiply;
-  will-change: transform, opacity;
+.portrait-frame {
+  width: 350px;
+  height: 470px;
+  position: relative;         /* sert de repère à l'aquarelle */
+  flex-shrink: 0;
 }
 
-/* grain léger */
-.shape::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.22'/></svg>");
-  opacity: 0.18;
-  mix-blend-mode: multiply;
+.portrait-frame img:not(.deco) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;        /* image entière, pas coupée */
 }
 
-@keyframes shapeIn{
-  to{ opacity: 0.9; transform: translateY(0) scale(1); }
+.intro-text {
+  position: relative;         /* sert de repère aux petites aquarelles */
+  max-width: 480px;
 }
 
-/* --- Formes (ajuste ici si besoin) --- */
-
-/* Goutte */
-.s-goutte{
-  width: 190px; height: 190px;
-  background: var(--c-bleu);
-  border-radius: 60% 40% 55% 45%;
-  top: 18%;
-  left: 22%;
-  rotate: 10deg;
-  animation-delay: 140ms;
+.intro-text p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  text-align: justify;
+  hyphens: auto;              /* coupe les mots longs pour éviter les grands trous */
 }
 
-/* Blob */
-.s-blob{
-  width: 260px; height: 200px;
-  background: var(--c-rose);
-  top: 30%;
-  left: 44%;
-  rotate: -6deg;
-  border-radius: 55% 45% 50% 50%;
-  clip-path: path("M32,78 C18,58 30,24 66,18 C95,13 118,34 137,41 C164,51 198,45 208,70 C220,100 190,120 160,132 C126,146 64,150 32,120 C16,104 16,92 32,78 Z");
-  animation-delay: 260ms;
-}
+/* ========================================
+   GRILLE DES PROJETS — PAGE D'ACCUEIL
+======================================== */
 
-/* ⭐ Étoile 1 (près du prénom, en haut à gauche) */
-.s-etoile{
-  width: 120px; height: 120px;
-  background: var(--c-vert);
-  left: 18%;
-  top: 34%;
-  rotate: -18deg;
-  clip-path: polygon(
-    50% 0%, 60% 28%, 90% 18%, 70% 45%,
-    100% 55%, 68% 62%, 78% 92%, 50% 74%,
-    22% 92%, 32% 62%, 0% 55%, 30% 45%,
-    10% 18%, 40% 28%
-  );
-  animation-delay: 360ms;
-}
-
-/* ⭐ Étoile 2 (en plus) */
-.s-etoile-2{
-  width: 150px; height: 150px;
-  background: var(--c-vert);
-  left: 62%;
-  top: 58%;
-  rotate: 10deg;
-  clip-path: polygon(
-    50% 0%, 60% 28%, 90% 18%, 70% 45%,
-    100% 55%, 68% 62%, 78% 92%, 50% 74%,
-    22% 92%, 32% 62%, 0% 55%, 30% 45%,
-    10% 18%, 40% 28%
-  );
-  animation-delay: 460ms;
-}
-
-/* Pastille (remplace l’ancienne place de l’étoile) */
-.s-pastille{
-  width: 210px; height: 170px;
-  background: var(--c-orange);
-  left: 14%;
-  top: 54%;
-  rotate: 8deg;
-  border-radius: 36% 64% 55% 45% / 55% 45% 55% 45%;
-  clip-path: path("M22,78 C30,40 78,22 116,30 C154,38 176,62 178,90 C180,120 156,146 120,154 C84,162 36,146 26,118 C18,98 18,92 22,78 Z");
-  animation-delay: 520ms;
-}
-
-/* Squiggle */
-.s-squiggle{
-  width: 300px; height: 190px;
-  background: var(--c-fuchsia);
-  right: 10%;
-  bottom: 6%;
-  rotate: -8deg;
-  border-radius: 28px;
-  clip-path: path("M20,60 C40,20 80,20 100,60 C120,100 160,100 180,60 C200,20 240,20 250,60 C260,100 230,140 190,130 C150,120 120,140 90,130 C60,120 10,100 20,60 Z");
-  animation-delay: 640ms;
-}
-
-/* =========================
-   PROJETS (grille index)
-========================= */
-
-.section-projets{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 var(--pad);
-}
-
-.projets-grille{
+.project-grid {
+  width: 90%;
+  max-width: 1400px;
+  margin: 100px auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-
-  grid-auto-rows: 240px;     /* base un peu plus compacte */
-  grid-auto-flow: row;      /* ❌ on enlève "dense" */
-}
-
-
-.carte-projet{
-  position: relative;
-  overflow: hidden;
-  background: #fff;
-  border-radius: var(--radius);
-
-  display: flex;
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+  gap: 14px;
   align-items: stretch;
 }
 
+.project-card {
+  position: relative;
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-decoration: none;
+  background: #ddd;
+}
 
-
-.carte-projet img{
+.project-card img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease, filter 0.4s ease;
 }
 
-
-.projet-titre{
+/* Voile léger au survol */
+.project-card::after {
+  content: "";
   position: absolute;
   inset: 0;
-  display:grid;
-  place-items:center;
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 1.1rem;
-  color: var(--ink);
-
+  background: rgba(0, 0, 0, 0.12);
   opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  background: rgba(255,255,255,0.35);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
-.carte-projet:hover img{
-  filter: blur(6px);
-  transform: scale(1.03);
+.project-card:hover img {
+  transform: scale(1.04);
+  filter: blur(3px);
 }
 
-.carte-projet:hover .projet-titre{
+.project-card:hover::after {
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* tailles */
-.carte-projet--tall{ grid-row: span 2; }
-.carte-projet--wide{ grid-column: span 2; }
-.carte-projet--big{ grid-column: span 2; grid-row: span 2; }
-
-/* =========================
-   À PROPOS (index)
-========================= */
-
-.section-apropos{
-  max-width: 700px;
-  margin: 70px auto 0;
-  padding: 0 var(--pad);
+/* Titre centré sur l'image */
+.project-card span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 90%;
+  padding: 0 10px;
+  color: #fff;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  opacity: 0;
+  transform: translate(-50%, -40%);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-.section-apropos h2{
-  margin: 0 0 10px;
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 1.4rem;
+.project-card:hover span {
+  opacity: 1;
+  transform: translate(-50%, -50%);
 }
 
-.section-apropos p{
-  margin: 0 0 10px;
-  line-height: 1.6;
+/* Variantes de taille des cartes */
+.project-card.tall {
+  grid-row: span 2;
 }
 
-.cv-lien{
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.95rem;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 2px;
+.project-card.big {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
-.cv-lien:hover{ opacity:0.7; }
-
-/* =========================
-   FOOTER (commun)
-========================= */
-
-.footer{
-  max-width: var(--max);
-  margin: 70px auto 0;
-  padding: 0 var(--pad) 30px;
+.project-card.wide {
+  grid-column: span 2;
 }
 
-.footer-line{
-  width: 160px;
-  height: 1px;
-  background: var(--ink);
-  opacity: 0.85;
-  margin: 0 auto;
-}
+/* ========================================
+   CONTACT
+======================================== */
 
-/* =========================
-   PAGES PROJET
-========================= */
-
-.project-meta{
+.contact {
+  min-height: 40vh;
   display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-
-  font-family: var(--font-display);   /* même typo que Méline Dargent */
-  text-transform: uppercase;
-  letter-spacing: 0.22em;             /* identique à l’identité */
-  font-size: 0.95rem;
-
-  opacity: 0.85;
-  margin-top: 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 100px 30px;
 }
 
-.project-meta p{
-  margin: 0;
-  white-space: nowrap;
+.contact a {
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+  padding-bottom: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
 }
 
-.project-page{
-  max-width: var(--max);
+.contact a:hover {
+  opacity: 0.5;
+}
+
+
+/* ========================================
+   STYLES COMMUNS AUX PAGES PROJETS
+======================================== */
+
+.project-page {
+  width: 90%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 26px var(--pad) 60px;
+  color: #222;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 200;
 }
 
-.project-hero{
-  margin: 10px 0 18px;
+.site-header {
+  width: 100%;
+  padding: 25px 5%;
+  background: #f7f5f0;
 }
 
-.project-title{
+.site-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.site-brand {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.site-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.site-nav-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.site-nav-link:hover {
+  opacity: 0.5;
+}
+
+/* Logo MD à la place du nom, sur les pages projets */
+.site-header .site-brand img {
+  display: block;
+  width: 60px !important;
+  max-width: 60px;
+  height: auto;
+  mix-blend-mode: multiply;   /* fond blanc du logo → beige */
+}
+
+.site-line,
+.project-footer-line {
+  height: 1px;
+  margin-top: 20px;
+  background: #dedbd3;
+}
+
+/* Titre et sous-titre */
+.project-hero {
+  padding: 65px 0 50px;
+}
+
+.project-title {
   margin: 0;
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.20em;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  -webkit-text-stroke: 0.5px currentColor;
-  text-shadow: 0.3px 0 currentColor, -0.3px 0 currentColor;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -1px;
 }
 
-.project-subtitle{
-  margin: 10px 0 0;
-  font-size: 1.05rem;
-  opacity: 0.75;
-  letter-spacing: 0.04em;
+.project-subtitle {
+  margin-top: 6px;
+  color: #000;
+  font-size: clamp(20px, 2.5vw, 29px);
+  line-height: 1.3;
+  font-weight: 300;
 }
 
-/* =========================
-   Galerie : placement propre
-========================= */
+/* ========================================
+   GALERIE DES PAGES PROJETS
+   Même grille que la page d'accueil :
+   3 colonnes, rangées de 250px, espace 14px.
 
-.project-gallery{
-  margin-top: 18px;
+   Fonctionne avec :
+   - .gallery-grid > figure
+   - l'ancien HTML QR codes (.gallery-row / .gallery-bottom)
+
+   Tailles disponibles sur les <figure> :
+   - (rien)            → 1 case
+   - .tall  / .g-main  → 1 colonne × 2 rangées
+   - .wide  / .g-wide  → 2 colonnes × 1 rangée
+   - .big   / .g-large → 2 colonnes × 2 rangées
+======================================== */
+
+.project-gallery {
+  margin-bottom: 65px;
 }
 
-/* -> On fixe des lignes, ça stabilise la grille */
-.gallery-grid{
+.gallery-grid,
+.project-gallery:has(.gallery-row),
+.project-gallery:has(.gallery-bottom) {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 260px 260px;  /* contrôle : plus de “placement bizarre” */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
   gap: 14px;
 }
 
-/* cartes */
-.gallery-grid figure,
-.gallery-row figure{
-  margin: 0;
-  overflow: hidden;
-  background: #fff;
-  border-radius: var(--radius);
+/* Les anciens conteneurs QR codes "disparaissent" :
+   leurs images rejoignent directement la grande grille */
+.gallery-row,
+.gallery-bottom {
+  display: contents;
 }
 
-/* images toujours bien cadrées */
-.project-gallery img{
+.project-gallery figure,
+.gallery-grid figure {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  background: #ddd;
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.project-gallery figure img,
+.gallery-grid figure img {
+  display: block;
+  max-width: 100%;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  transition: transform 0.6s ease;
 }
 
-/* placement */
-.g-main{ grid-row: 1 / span 2; }     /* grande image sur 2 lignes */
-.g-small-1{ grid-row: 1; }
-.g-small-2{ grid-row: 2; }
+/* Pas de voile sombre ni de zoom au survol sur les pages projets
+   (il reste uniquement sur la page d'accueil). */
 
-/* rangée du bas */
-.gallery-row{
-  margin-top: 14px;
+/* Variantes de taille */
+.project-gallery figure.tall,
+.project-gallery figure.g-main {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.project-gallery figure.wide,
+.project-gallery figure.g-wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.project-gallery figure.big,
+.project-gallery figure.g-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* ========================================
+   MOSAÏQUE 5 PHOTOS
+   Ajouter la classe "gallery-mosaic" sur .gallery-grid.
+   Photo 1 : grande à gauche (2 rangées)
+   Photos 2 et 3 : en haut à droite, même largeur
+   Photo 4 : en bas, large
+   Photo 5 : en bas à droite, plus étroite
+======================================== */
+
+.gallery-grid.gallery-mosaic {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: 250px 250px;
+  grid-template-areas:
+    "p1 p1 p1 p1 p2 p2 p2 p2 p3 p3 p3 p3"
+    "p1 p1 p1 p1 p4 p4 p4 p4 p4 p5 p5 p5";
+}
+
+/* Version HAUTE de la mosaïque, seulement pour les pages
+   qui ajoutent la classe "gallery-tall" en plus.
+   Les autres mosaïques ne changent pas. */
+.gallery-grid.gallery-mosaic.gallery-tall {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  aspect-ratio: 2.2 / 1;   /* plus le chiffre est petit, plus c'est haut */
+}
+
+.gallery-mosaic figure:nth-child(1) { grid-area: p1; }
+.gallery-mosaic figure:nth-child(2) { grid-area: p2; }
+.gallery-mosaic figure:nth-child(3) { grid-area: p3; }
+.gallery-mosaic figure:nth-child(4) { grid-area: p4; }
+.gallery-mosaic figure:nth-child(5) { grid-area: p5; }
+
+/* ========================================
+   TRIO 3 PHOTOS
+   Ajouter la classe "gallery-trio" sur .gallery-grid.
+   Trois grandes cases verticales côte à côte,
+   idéal pour des affiches.
+======================================== */
+
+.gallery-grid.gallery-trio {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 514px;
+  grid-auto-rows: 514px;
+}
+
+.gallery-trio figure:nth-child(n) {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+/* ========================================
+   MOSAÏQUE VINYLES (4 PHOTOS)
+   Classe "gallery-vinyl" sur .gallery-grid.
+   Photo 1 : grande à gauche (2 rangées)
+   Photo 2 : haute au milieu (2 rangées)
+   Photo 3 : haut droite
+   Photo 4 : bas droite
+======================================== */
+
+.gallery-grid.gallery-vinyl {
+  grid-template-columns: 8fr 5.2fr 5.9fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "p1 p2 p3"
+    "p1 p2 p4";
+  aspect-ratio: 2.6 / 1;   /* plus le chiffre est petit, plus c'est haut */
+}
+
+.gallery-vinyl figure:nth-child(1) { grid-area: p1; }
+.gallery-vinyl figure:nth-child(2) { grid-area: p2; }
+.gallery-vinyl figure:nth-child(3) { grid-area: p3; }
+.gallery-vinyl figure:nth-child(4) { grid-area: p4; }
+
+/* ========================================
+   5 PHOTOS VERTICALES CÔTE À CÔTE
+   Classe "gallery-five" sur .gallery-grid.
+   Pour des formats très hauts et étroits
+   (kakémonos, marque-pages…).
+======================================== */
+
+.gallery-grid.gallery-five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr);
+  grid-auto-rows: auto;
+  aspect-ratio: 2 / 1;   /* plus le chiffre est petit, plus c'est haut */
+}
+
+.gallery-five figure:nth-child(n) {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+/* ========================================
+   MOSAÏQUE 6 PHOTOS
+   Classe "gallery-six" sur .gallery-grid.
+   Photo 1 : haute à gauche (2 rangées)
+   Photo 2 : haut milieu      Photo 4 : bas milieu
+   Photo 3 : haut droite (large)
+   Photos 5 et 6 : bas droite, côte à côte
+======================================== */
+
+.gallery-grid.gallery-six {
+  grid-template-columns: 4.7fr 7.7fr 3.15fr 3.4fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "p1 p2 p3 p3"
+    "p1 p4 p5 p6";
+  aspect-ratio: 2 / 1;   /* plus le chiffre est petit, plus c'est haut */
+}
+
+.gallery-six figure:nth-child(1) { grid-area: p1; }
+.gallery-six figure:nth-child(2) { grid-area: p2; }
+.gallery-six figure:nth-child(3) { grid-area: p3; }
+.gallery-six figure:nth-child(4) { grid-area: p4; }
+.gallery-six figure:nth-child(5) { grid-area: p5; }
+.gallery-six figure:nth-child(6) { grid-area: p6; }
+
+/* ========================================
+   MOSAÏQUE 5 PHOTOS AVEC PHOTO DE STAND
+   Classe "gallery-stand" sur .gallery-grid.
+   Photo 1 : haute à gauche
+   Photo 2 : haute au milieu
+   Photo 3 : haut droite (large)
+   Photos 4 et 5 : bas droite, côte à côte
+======================================== */
+
+.gallery-grid.gallery-stand {
+  grid-template-columns: 4.7fr 7.7fr 3.15fr 3.4fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "p1 p2 p3 p3"
+    "p1 p2 p4 p5";
+  aspect-ratio: 2 / 1;   /* plus le chiffre est petit, plus c'est haut */
+}
+
+.gallery-stand figure:nth-child(1) { grid-area: p1; }
+.gallery-stand figure:nth-child(2) { grid-area: p2; }
+.gallery-stand figure:nth-child(3) { grid-area: p3; }
+.gallery-stand figure:nth-child(4) { grid-area: p4; }
+.gallery-stand figure:nth-child(5) { grid-area: p5; }
+
+/* ========================================
+   MOSAÏQUE 3 PHOTOS
+   Ajouter la classe "gallery-three" sur .gallery-grid.
+   Photo 1 : grande à gauche (2 rangées)
+   Photos 2 et 3 : empilées à droite
+   → un rectangle plein, sans trou.
+======================================== */
+
+.gallery-grid.gallery-three {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "p1 p2"
+    "p1 p3";
+  aspect-ratio: 2.1 / 1;   /* hauteur du bloc : plus le chiffre est petit, plus c'est haut */
+}
+
+.gallery-three figure:nth-child(1) { grid-area: p1; }
+.gallery-three figure:nth-child(2) { grid-area: p2; }
+.gallery-three figure:nth-child(3) { grid-area: p3; }
+
+/* ========================================
+   IMAGES ENTIÈRES (SANS RECADRAGE)
+   Ajouter la classe "gallery-fit" sur .gallery-grid :
+   chaque image s'affiche en entier dans sa case.
+   La couleur de fond remplit l'espace autour.
+======================================== */
+
+.gallery-grid.gallery-fit figure {
+  background: #e3e2e5;
+}
+
+.gallery-grid.gallery-fit figure img {
+  object-fit: contain;
+}
+
+/* Exception : cette image remplit sa case même dans une galerie "gallery-fit".
+   Ajouter class="fill" sur son <figure>. */
+.gallery-grid.gallery-fit figure.fill img {
+  object-fit: cover;
+}
+
+/* Une seule image moins coupée : ajouter class="fit" sur son <figure>.
+   Le zoom se règle dans le HTML avec style="--zoom: 2" :
+   1 = image entière, plus le chiffre est grand, plus on zoome. */
+.gallery-grid figure.fit {
+  background: #e4e4e4;   /* gris clair, comme le fond de tes mockups */
+}
+
+.gallery-grid figure.fit img {
+  object-fit: contain;
+  transform-origin: var(--focus, center);
+  transform: translate(var(--shift-x, 0), var(--shift-y, 0)) scale(var(--zoom, 1));
+}
+
+/* ========================================
+   DESCRIPTION ET INFORMATIONS DU PROJET
+======================================== */
+
+.project-text {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 10%;
+  padding-top: 28px;
+  border-top: 1px solid #d8d5ce;
 }
 
-/* hauteur douce pour les panoramas */
-.gallery-row figure{
-  height: 280px;
+.project-note {
+  max-width: 700px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.85;
+  font-weight: 300;
 }
 
-/* Par défaut : on affiche "Retour au portfolio" */
-.nav-back{ display: inline-block; }
-
-/* Sur la page d’accueil (index) : on cache ce lien */
-body.is-home .nav-back{ display: none; }
-
-.cv-download-section{
-  margin-top: 60px;
-  text-align: center;
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.cv-download-btn{
-  display: inline-block;
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 0.95rem;
-
-  padding: 14px 22px;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-
-  transition: background 0.2s ease, opacity 0.2s ease;
+.project-meta p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
-.cv-download-btn:hover{
-  background: rgba(107,107,107,0.08);
-  opacity: 1;
+/* Pied de page des projets */
+.project-footer {
+  padding: 40px 0;
 }
 
+.project-footer-line {
+  margin-top: 0;
+}
 
+/* ========================================
+   AQUARELLES DÉCORATIVES (PAGE D'ACCUEIL)
+   Pour déplacer une aquarelle : top / left / right / bottom.
+   Pour changer sa taille : width.
+   Attention : ne pas mettre de z-index sur .intro, .contact
+   ou .portrait-frame, sinon le fond blanc des images réapparaît.
+======================================== */
 
-/* =========================
-   Responsive
-========================= */
+.intro,
+.contact {
+  position: relative;
+  overflow: clip;             /* évite le défilement horizontal */
+}
 
-@media (max-width: 900px){
-  .gallery-grid{
-    grid-template-rows: 220px 220px;
+.deco {
+  position: absolute;
+  z-index: -1;                /* passe derrière le prénom et le texte */
+  height: auto;
+  mix-blend-mode: multiply;   /* le fond blanc de l'aquarelle devient beige */
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Grande, derrière le prénom */
+.deco-1 { width: 330px; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-12deg); }
+/* Cercle en bas à gauche du prénom */
+.deco-2 { width: 96px; bottom: -16px; left: -80px; transform: rotate(40deg); opacity: 0.85; }
+/* Cercle entre le prénom et le texte */
+.deco-3 { width: 170px; top: 20px; left: -31px; transform: rotate(75deg); opacity: 0.85; }
+/* Grand cercle à droite du texte */
+.deco-4 { width: 225px; top: 360px; right: 3vw; transform: rotate(160deg); opacity: 0.85; }
+/* Grand cercle en haut à gauche de la page (z-index : passe aussi sur le menu) */
+.deco-5 { width: 290px; top: 53px; left: -25px; z-index: 101; transform: rotate(-50deg); opacity: 0.85; }
+/* Petit cercle en haut à droite de la page */
+.deco-8 { width: 95px; top: 83px; left: 80vw; z-index: 101; transform: rotate(110deg); opacity: 0.85; }
+/* Dans la section contact */
+.deco-6 { width: 110px; top: 25%; left: 14%; transform: rotate(110deg); opacity: 0.8; }
+.deco-7 { width: 55px; bottom: 22%; right: 18%; transform: rotate(-20deg); }
+
+/* ========================================
+   TABLETTES
+======================================== */
+
+@media (max-width: 900px) {
+  .deco-2 { width: 80px; left: -30px; }
+  .deco-3 { width: 120px; left: -20px; top: 15px; }
+  .deco-4 { width: 160px; top: 55%; right: -40px; }
+  .deco-5 { width: 220px; }
+  .deco-8 { width: 80px; top: 95px; left: 84vw; }
+
+  .top-header {
+    padding: 15px 20px;
   }
-  .gallery-row figure{
-    height: 240px;
-  }
-}
 
-@media (max-width: 700px){
-  .gallery-grid{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+  .intro {
+    gap: 40px;
+    padding: 60px 5vw;
   }
 
-  .g-main{ grid-row: auto; }
-
-  .gallery-grid figure{
-    height: 52vh;               /* taille agréable sur mobile */
-    min-height: 260px;
+  .portrait-frame {
+    width: 280px;
+    height: 380px;
   }
 
-  .gallery-row{
-    grid-template-columns: 1fr;
+  .intro-text p {
+    font-size: 27px;
   }
 
-  .gallery-row figure{
-    height: 44vh;
-    min-height: 240px;
-  }
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 900px){
-  .projets-grille{
+  .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 200px;
   }
 
-  .gallery-grid{
-    grid-template-columns: 1.6fr 1fr;
+  .project-hero {
+    padding-top: 50px;
   }
 
-  /* étoile 1 reste proche du prénom */
-  .s-etoile{
-    left: 14%;
-    top: 30%;
-  }
-}
-
-@media (max-width: 700px){
-  /* Pages projet */
-  .gallery-grid{
-    grid-template-columns: 1fr;
-  }
-
-  .g-main{ grid-row: auto; }
-
-  .project-gallery img{
-    max-height: 56vh;
-  }
-
-  .gallery-row{
-    grid-template-columns: 1fr;
+  /* Galerie projets : 2 colonnes, comme l'accueil */
+  .gallery-grid,
+  .project-gallery:has(.gallery-row),
+  .project-gallery:has(.gallery-bottom) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 600px){
-  .accueil-formes{
-    width: 96vw;
-    height: 62vh;
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .top-header {
+    height: auto;
+    min-height: 80px;
+    grid-template-columns: 1fr auto;
+    padding: 15px 20px;
   }
 
-  .projets-grille{
+  .nav-left {
+    gap: 15px;
+  }
+
+  .nav-left a {
+    font-size: 15px;
+  }
+
+  .nav-right {
+    display: none;
+  }
+
+  .logo {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .logo img {
+    width: 65px;
+  }
+
+  .intro {
+    min-height: auto;
+    flex-direction: column;
+    padding: 60px 25px;
+    gap: 40px;
+  }
+
+  .portrait-frame {
+    width: 80vw;
+    height: 105vw;
+    max-height: 500px;
+  }
+
+  .intro-text {
+    width: 100%;
+  }
+
+  .intro-text p {
+    font-size: 25px;
+  }
+
+  .deco-1 { width: 74vw; }
+  .deco-2 { width: 60px; left: -5px; bottom: -20px; }
+  .deco-3 { width: 80px; left: 0; top: -15px; }
+  .deco-4 { width: 120px; top: auto; bottom: 20px; right: -40px; }
+  .deco-5 { width: 150px; top: -30px; left: -50px; }
+  .deco-8 { width: 55px; top: 100px; left: 82vw; }
+  .deco-6 { width: 70px; top: 12%; left: 8%; }
+  .deco-7 { width: 40px; bottom: 12%; right: 12%; }
+
+  .project-grid {
+    width: 92%;
     grid-template-columns: 1fr;
+    grid-auto-rows: 350px;
+    gap: 15px;
+    margin: 50px auto;
+  }
+
+  .project-card.tall,
+  .project-card.big,
+  .project-card.wide {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .project-card span {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  .contact {
+    flex-direction: column;
+    gap: 25px;
+    min-height: 30vh;
+    padding: 70px 20px;
+  }
+
+  /* En-tête des pages projets */
+  .site-header {
+    padding: 20px 5%;
+  }
+
+  .site-header-inner {
+    align-items: center;
+    gap: 15px;
+  }
+
+  .site-brand {
+    font-size: 15px;
+  }
+
+  .site-nav {
+    gap: 14px;
+  }
+
+  .site-nav-link {
+    font-size: 15px;
+  }
+
+  .site-header .site-brand img {
+    width: 48px !important;
+    max-width: 48px;
+  }
+
+  .project-hero {
+    padding: 45px 0 30px;
+  }
+
+  .project-title {
+    letter-spacing: -1px;
+  }
+
+  /* Galerie projets : 1 colonne, comme l'accueil */
+  .gallery-grid,
+  .project-gallery:has(.gallery-row),
+  .project-gallery:has(.gallery-bottom) {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 350px;
+    gap: 15px;
+  }
+
+  .project-gallery {
+    margin-bottom: 40px;
+  }
+
+  .project-gallery figure.tall,
+  .project-gallery figure.g-main,
+  .project-gallery figure.wide,
+  .project-gallery figure.g-wide,
+  .project-gallery figure.big,
+  .project-gallery figure.g-large {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  /* Mosaïque 5 photos sur mobile : une photo par ligne */
+  .gallery-grid.gallery-mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: 350px;
+    grid-template-areas: none;
+  }
+
+  .gallery-grid.gallery-mosaic.gallery-tall {
+    grid-template-rows: none;
+    grid-auto-rows: 350px;
+    aspect-ratio: auto;
+  }
+
+  .gallery-mosaic figure:nth-child(n) {
+    grid-area: auto;
+  }
+
+  /* Mosaïque vinyles sur mobile : une photo par ligne */
+  .gallery-grid.gallery-vinyl {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: 350px;
+    grid-template-areas: none;
+    aspect-ratio: auto;
+  }
+
+  .gallery-vinyl figure:nth-child(n) {
+    grid-area: auto;
+  }
+
+  /* 5 photos verticales sur mobile : 2 par ligne */
+  .gallery-grid.gallery-five {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: 420px;
+    aspect-ratio: auto;
+  }
+
+  /* Mosaïque 6 photos sur mobile : 2 par ligne */
+  .gallery-grid.gallery-six {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: 300px;
+    grid-template-areas: none;
+    aspect-ratio: auto;
+  }
+
+  .gallery-six figure:nth-child(n) {
+    grid-area: auto;
+  }
+
+  /* Mosaïque stand sur mobile : 2 par ligne, marque-pages en pleine largeur */
+  .gallery-grid.gallery-stand {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: 300px;
+    grid-template-areas: none;
+    aspect-ratio: auto;
+  }
+
+  .gallery-stand figure:nth-child(n) {
+    grid-area: auto;
+  }
+
+  .gallery-stand figure:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  /* Mosaïque 3 photos sur mobile : une photo par ligne */
+  .gallery-grid.gallery-three {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: 350px;
+    grid-template-areas: none;
+    aspect-ratio: auto;
+  }
+
+  .gallery-grid.gallery-three.gallery-fit {
     grid-auto-rows: auto;
   }
 
-  .carte-projet--tall,
-  .carte-projet--wide,
-  .carte-projet--big{
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .carte-projet img{
+  .gallery-three.gallery-fit figure,
+  .gallery-three.gallery-fit figure img {
     height: auto;
   }
 
-  /* étoiles plus petites sur mobile */
-  .s-etoile{
-    width: 92px;
-    height: 92px;
-    left: 10%;
-    top: 26%;
+  .gallery-three figure:nth-child(n) {
+    grid-area: auto;
   }
 
-  .s-etoile-2{
-    width: 120px;
-    height: 120px;
-    left: 58%;
-    top: 60%;
+  /* Trio sur mobile : une affiche par ligne */
+  .gallery-grid.gallery-trio {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: 480px;
+  }
+
+  .project-text {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-top: 22px;
+  }
+
+  .project-note {
+    font-size: 16px;
+  }
+
+  .project-footer {
+    padding: 30px 0;
   }
 }
+/* ========================================
+   AJUSTEMENTS ACCUEIL (à laisser à la fin du fichier)
+======================================== */
 
+/* Le fond blanc du prénom prend la couleur de l'arrière-plan */
+.portrait-frame img:not(.deco) {
+  mix-blend-mode: multiply;
+}
 
+/* Aquarelle à cheval sur le haut du prénom */
+.deco-3 { width: 162px; top: -7px; left: -47px; }
 
+/* Pas d'aquarelle en haut à droite */
+.deco-8 { display: none; }
+
+/* Grande aquarelle en haut à gauche */
+.deco-5 { width: 328px; top: -18px; left: -53px; }
+
+@media (max-width: 900px) {
+  .deco-3 { width: 120px; left: -20px; top: 15px; }
+  .deco-5 { width: 220px; top: -20px; left: -50px; }
+}
+
+@media (max-width: 600px) {
+  .deco-3 { width: 80px; left: 0; top: -15px; }
+  .deco-5 { width: 150px; top: -30px; left: -50px; }
+}

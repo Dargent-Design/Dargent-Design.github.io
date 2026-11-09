@@ -1,87 +1,67 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>L'Art Nouveau — Méline Dargent</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shéhérazade Louvre-Lens — Méline Dargent</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Topbar identique au portfolio -->
-  <header class="site-header">
-    <div class="site-header-inner">
-      <a href="index.html#accueil" class="site-brand">Méline Dargent</a>
+<!-- Topbar identique au portfolio -->
+<header class="site-header">
+<div class="site-header-inner">
+<a href="index.html#home" class="site-brand"><img src="accueil/logo MD.jpg" alt="Méline Dargent — accueil" width="60" style="width:60px;height:auto;mix-blend-mode:multiply;"></a>
 
-      <nav class="site-nav">
-  <a href="index.html#projets" class="site-nav-link nav-back">Retour au portfolio</a>
-  <a href="index.html#projets" class="site-nav-link">Projets</a>
-  <a href="index.html#apropos" class="site-nav-link">À propos</a>
+<nav class="site-nav">
+<a href="index.html#work" class="site-nav-link">Retour au projets</a>
+<a href="index.html#contact" class="site-nav-link">Contact</a>
 </nav>
+</div>
+<div class="site-line"></div>
+</header>
 
-    </div>
-    <div class="site-line"></div>
-  </header>
+<main class="project-page">
 
-  <main class="project-page">
+<!-- Titre sous la topbar -->
+<header class="project-hero">
+<h1 class="project-title">Louvre-Lens</h1>
+<p class="project-subtitle">Shéhérazade 2026</p>
+</header>
 
-    <!-- Titre sous la topbar -->
-    <header class="project-hero">
-      <h1 class="project-title">L’Art Nouveau</h1>
-      <p class="project-subtitle">Magazine collaboratif</p>
-    </header>
+<!-- Galerie : 3 photos verticales côte à côte -->
+<section class="project-gallery">
+<div class="gallery-grid gallery-trio">
+<figure><img src="louvres lens/louvre1.jpg" alt="Affiche Shéhérazade 2026"></figure>   <!-- gauche -->
+<figure><img src="louvres lens/lens2.jpg" alt="Shéhérazade — détail"></figure>       <!-- milieu -->
+<figure><img src="louvres lens/louvreslens3_resultat.webp" alt="Shéhérazade — autre vue"></figure>    <!-- droite -->
+</div>
+</section>
 
-    <!-- Galerie -->
-    <section class="project-gallery">
-      <div class="gallery-grid">
-        <figure class="g-main">
-          <img src="typomagazine/typomagazine.webp" alt="Image principale du projet">
-        </figure>
+<!-- Texte + meta -->
+<section class="project-text">
+<p class="project-note">
+        Réalisation d’un diptyque pour l’exposition Les Mille et Une Nuits du Louvre-Lens. Cette Shéhérazade 2026 s’inspire du grillage bleu afghan pour évoquer l’oppression que subissent encore de nombreuses femmes dans le monde, entre invisibilisation et résistance. Sélectionné par le musée pour illustrer la campagne de communication de l’exposition, ce projet a été mis en avant sur plusieurs de ses supports de diffusion.
+</p>
 
-        <figure class="g-small-1">
-          <img src="typomagazine/affichetypo.webp" alt="Détail du projet">
-        </figure>
+<div class="project-meta">
+<p>Février 2026</p>
+</div>
+</section>
 
-        <figure class="g-small-2">
-          <img src="typomagazine/typomagazine5.webp" alt="Autre vue du projet">
-        </figure>
-      </div>
+<footer class="project-footer">
+<div class="project-footer-line"></div>
+</footer>
 
-      <div class="gallery-row">
-        <figure>
-          <img src="typomagazine/magazinetypo2.webp" alt="Image allongée 1">
-        </figure>
-        <figure>
-          <img src="typomagazine/magazinetypo3.webp" alt="Image allongée 2">
-        </figure>
-      </div>
-    </section>
+</main>
 
-    <section class="project-text">
-      <p class="project-note">
-        En passant par les fresques de Gustave Klimpt, l’architecture emblématique de Gaudi
-        ou encore le travail de Hector Guimard. Cette revue reprend tous les codes de l’Art Nouveau
-        grâce à une bibliographie composée de 10 livres choisis en collaboration avec la documentation d’Amiens.
-        Le but est simple : réussir à franchir le seuil de la documentation et rencontrer Peggy !
-      </p>
-
-      <div class="project-meta">
-        <p>14 pages — reliure cousue</p>
-        <p>Avril 2025</p>
-      </div>
-    </section>
-
-    <footer class="project-footer">
-      <div class="project-footer-line"></div>
-    </footer>
-
-  </main>
-
+<script src="script.js"></script>
 </body>
 </html>
