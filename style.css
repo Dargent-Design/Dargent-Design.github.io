@@ -1028,3 +1028,26 @@ body {
   .deco-3 { width: 80px; left: 0; top: -15px; }
   .deco-5 { width: 150px; top: -30px; left: -50px; }
 }
+
+/* ========================================
+   RÉGLAGES TÉLÉPHONE
+======================================== */
+
+@media (max-width: 600px) {
+
+  /* Titres des projets cachés sur téléphone */
+  .project-card span {
+    display: none;
+  }
+
+  /* Logo MD plus petit sur téléphone (page d'accueil) */
+  .logo img {
+    width: 45px;
+  }
+
+  /* Logo MD plus petit sur téléphone (pages projets) */
+  .site-header .site-brand img {
+    width: 38px !important;
+    max-width: 38px;
+  }
+}
