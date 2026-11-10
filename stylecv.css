@@ -1,7 +1,3 @@
-/* ========================================
-   RESET
-======================================== */
-
 *,
 *::before,
 *::after {
@@ -18,6 +14,7 @@ body {
   color: #222;
   font-family: "Inter", sans-serif;
   font-weight: 300;
+  overflow-x: clip;             /* l'aquarelle peut dépasser sans créer de défilement */
 }
 
 
@@ -28,33 +25,22 @@ body {
 .cv-header {
   width: 100%;
   height: 90px;
-
   display: flex;
   align-items: center;
-
   padding: 15px 40px;
-
   position: sticky;
   top: 0;
   z-index: 100;
-
   background: rgba(247, 245, 240, 0.95);
   backdrop-filter: blur(8px);
 }
-
-
-/* Retour */
 
 .cv-back {
   font-family: "Quicksand", sans-serif;
   font-size: 15px;
   font-weight: 400;
-
   color: #222;
   text-decoration: none;
-
-  margin-left: 0;
-
   transition: opacity 0.3s ease;
 }
 
@@ -62,7 +48,7 @@ body {
   opacity: 0.5;
 }
 
-/* Ligne fine sous l'en-tête, comme sur les pages projets */
+/* Ligne fine sous l'en-tête */
 .cv-header::after {
   content: "";
   position: absolute;
@@ -75,46 +61,44 @@ body {
 
 
 /* ========================================
-   INTRODUCTION
+   PRÉNOM + AQUARELLE
 ======================================== */
 
 .cv-intro {
-  margin-left: 8vw !important;
-  width: auto;
-
-  padding-top: 80px;
-  padding-bottom: 90px;
+  margin-left: 8vw;
+  padding-top: 50px;            /* espace sous l'en-tête */
+  padding-bottom: 30px;         /* espace entre le prénom et les sections */
 }
-
-
-/* Titre */
 
 .cv-title-image {
+  position: relative;           /* sert de repère à l'aquarelle */
   width: 400px;
-
-  margin-top: 0;
-  margin-bottom: 45px;
+  max-width: 100%;
 }
 
-.cv-title-image img {
-  width: 100%;
+/* Le prénom */
+.cv-title-image img.cv-prenom {
+  position: relative;
   display: block;
-  mix-blend-mode: multiply;   /* le fond blanc de l'image devient beige */
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;     /* fond blanc → beige */
 }
 
-
-/* Texte d'introduction */
-
-.cv-intro p {
-  max-width: 620px;
-
-  margin: 0;
-
-  font-family: "Alumni Sans Pinstripe", sans-serif;
-  font-size: 30px;
-  line-height: 1.25;
-
-  letter-spacing: 0.4px;
+/* L'aquarelle derrière le début du prénom
+   Déplacer : top / left — Taille : width */
+.cv-title-image img.cv-deco {
+  position: absolute;
+  z-index: -1;
+  width: 180px;
+  height: auto;
+  top: -30px;
+  left: -60px;
+  transform: rotate(40deg);
+  opacity: 0.85;
+  mix-blend-mode: multiply;     /* fond blanc → beige */
+  pointer-events: none;
+  user-select: none;
 }
 
 
@@ -123,7 +107,7 @@ body {
 ======================================== */
 
 .cv-main {
-  margin-left: 8vw !important;
+  margin-left: 8vw;
   width: 84%;
   max-width: 1200px;
 }
@@ -134,75 +118,53 @@ body {
 ======================================== */
 
 .cv-section {
-  border-top: 1px solid #222;
-
-  padding: 45px 0 55px;
-
   display: grid;
-
   grid-template-columns: 220px 1fr;
-
   gap: 50px;
+  padding: 35px 0 45px;
+  border-top: 1px solid #222;
 }
-
-
-/* Titres de sections */
 
 .cv-section h2 {
   margin: 0;
-
   font-family: "Quicksand", sans-serif;
   font-size: 14px;
   font-weight: 500;
-
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 
 /* ========================================
-   CONTENU
+   CONTENU DES SECTIONS
 ======================================== */
 
 .cv-content {
   max-width: 650px;
-
   display: flex;
   flex-direction: column;
-
   gap: 28px;
 }
 
-
-/* Lignes */
-
 .cv-row {
   display: grid;
-
   grid-template-columns: 160px 1fr;
-
   column-gap: 35px;
-
   align-items: start;
 }
 
-
 .cv-row span {
   margin: 0;
-
   font-family: "Quicksand", sans-serif;
   font-size: 14px;
   font-weight: 500;
 }
 
-
 .cv-row p {
   margin: 0;
-
   font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 300;
-
   line-height: 1.7;
 }
 
@@ -213,31 +175,20 @@ body {
 
 .tags {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 10px;
-
   max-width: 650px;
 }
 
-
 .tags span {
   border: 1px solid #222;
-
   border-radius: 30px;
-
   padding: 8px 16px;
-
   font-family: "Quicksand", sans-serif;
   font-size: 13px;
   font-weight: 400;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
-
 
 .tags span:hover {
   background: #222;
@@ -250,41 +201,28 @@ body {
 ======================================== */
 
 .download {
-  margin-left: 8vw !important;
-
+  margin-left: 8vw;
   padding: 70px 0 100px;
 }
 
-
 .download a {
   display: inline-block;
-
   border: 1px solid #222;
   border-radius: 40px;
-
   padding: 15px 25px;
-
   color: #222;
   text-decoration: none;
-
   font-family: "Quicksand", sans-serif;
   font-size: 13px;
   font-weight: 400;
-
   letter-spacing: 0.12em;
   text-transform: uppercase;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
-
 
 .download a:hover {
   background: #222;
   color: #fff;
-
   transform: translateY(-2px);
 }
 
@@ -296,10 +234,8 @@ body {
 @media (max-width: 800px) {
 
   /* HEADER */
-
   .cv-header {
     height: 80px;
-
     padding: 15px 25px;
   }
 
@@ -312,104 +248,75 @@ body {
     right: 25px;
   }
 
-
-  /* INTRO */
-
+  /* PRÉNOM + AQUARELLE */
   .cv-intro {
-    margin-left: 25px !important;
-
+    margin-left: 25px;
     width: calc(100% - 50px);
-
-    padding-top: 60px;
-    padding-bottom: 70px;
+    padding-top: 40px;
+    padding-bottom: 25px;
   }
-
 
   .cv-title-image {
     width: 280px;
-
-    margin-bottom: 35px;
+    margin-left: 20px;          /* laisse dépasser l'aquarelle à gauche */
   }
 
-
-  .cv-intro p {
-    font-size: 25px;
-    line-height: 1.25;
+  .cv-title-image img.cv-deco {
+    width: 110px;
+    top: -15px;
+    left: -35px;
   }
-
 
   /* MAIN */
-
   .cv-main {
-    margin-left: 25px !important;
-
+    margin-left: 25px;
     width: calc(100% - 50px);
   }
 
-
   /* SECTIONS */
-
   .cv-section {
     grid-template-columns: 1fr;
-
     gap: 25px;
-
-    padding: 35px 0 45px;
+    padding: 30px 0 40px;
   }
-
 
   .cv-section h2 {
     font-size: 13px;
   }
 
-
-  /* ROWS */
-
+  /* LIGNES */
   .cv-row {
     grid-template-columns: 1fr;
-
     gap: 5px;
   }
-
 
   .cv-row span {
     font-size: 13px;
   }
-
 
   .cv-row p {
     font-size: 14px;
     line-height: 1.65;
   }
 
-
   /* TAGS */
-
   .tags {
     gap: 8px;
   }
 
-
   .tags span {
     padding: 7px 13px;
-
     font-size: 12px;
   }
 
-
-  /* DOWNLOAD */
-
+  /* TÉLÉCHARGEMENT */
   .download {
-    margin-left: 25px !important;
-
+    margin-left: 25px;
     padding: 55px 0 80px;
   }
 
-
   .download a {
     font-size: 12px;
-
     padding: 14px 20px;
   }
 }
-

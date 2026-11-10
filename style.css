@@ -983,6 +983,24 @@ body {
     padding: 30px 0;
   }
 }
+
+/* ========================================
+   COPYRIGHT
+======================================== */
+
+.copyright {
+  text-align: center;
+  margin-top: -50px;          /* remonte vers les liens contact : plus le chiffre est grand, plus ça monte */
+  padding: 0 20px 40px;
+  font-size: 14px;
+  color: #777;
+}
+
+@media (max-width: 600px) {
+  .copyright {
+    margin-top: -30px;
+  }
+}
 /* ========================================
    AJUSTEMENTS ACCUEIL (à laisser à la fin du fichier)
 ======================================== */
